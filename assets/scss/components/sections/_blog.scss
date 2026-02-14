@@ -1,0 +1,30 @@
+@use '../../base/media' as *;
+@use '../../base/mixins' as *;
+@use '../../base/var' as *;
+
+.blog {
+    padding-block: rem(170px) rem(120px);
+
+    &__cards {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: rem(40px) rem(30px);
+        margin-bottom: rem(80px);
+    }
+
+    .section-info {
+        margin-bottom: rem(80px);
+    }
+
+    .container {
+        max-width: rem(1332px);
+    }
+
+    .cta {
+        justify-content: center;
+        margin: 0 auto;
+        padding: rem(16px);
+        min-width: rem(159px);
+        border-radius: rem(8px);
+    }
+}

@@ -5,10 +5,556 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Couch Steamers | About</title>
+
+    <link rel="preload" href="./assets/fonts/ff_base_400.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="./assets/fonts/ff_accent_400.woff2" as="font" type="font/woff2" crossorigin>
+
+    <link rel="stylesheet" href="./assets/libs/swiper/swiper.min.css">
+    <link rel="stylesheet" href="./assets/css/main.min.css">
+
+    <script defer src="./assets/libs/swiper/swiper.min.js"></script>
+    <script defer src="./assets/scripts/mods/sectionFaq.js"></script>
+    <script defer src="./assets/scripts/mods/sectionArticles.js"></script>
+    <script defer src="./assets/scripts/mods/sectionQuiz.js"></script>
+    <script defer src="./assets/scripts/main.js"></script>
 </head>
 
 <body>
-
+    <header class="header js-header">
+        <div class="container">
+            <a href="javascript: void(0)" class="header__logo">
+                <img width="126" height="71" src="./assets/imgs/ico/logo.svg" alt="Logo">
+            </a>
+            <nav class="header__nav">
+                <ul class="header__list">
+                    <li>
+                        <a href="javascript: void(0)">About</a>
+                    </li>
+                    <li>
+                        <a href="javascript: void(0)">Services</a>
+                        <div class="submenu">
+                            <ul class="submenu__box">
+                                <li><a href="javascript: void(0)">Couch Cleaning</a></li>
+                                <li><a href="javascript: void(0)">Mattress Cleaning</a></li>
+                                <li><a href="javascript: void(0)">Chair Cleaning</a></li>
+                                <li><a href="javascript: void(0)">Rug Cleaning</a></li>
+                                <li><a href="javascript: void(0)">Curtain Cleaning</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="javascript: void(0)">Reviews</a>
+                    </li>
+                    <li>
+                        <a href="javascript: void(0)">Blog</a>
+                    </li>
+                    <li>
+                        <a href="javascript: void(0)">FAQs</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="header__controls">
+                <a href="tel:+19803046427" class="header__tel">+1 980 304 64 27</a>
+                <a href="javascript: void(0)" class="cta">Book Now</a>
+            </div>
+        </div>
+    </header>
+    <main class="main">
+        <section class="intro">
+            <div class="container">
+                <div class="intro__content">
+                    <h1 class="main-title">
+                        Professional Couch Cleaning Service in the US
+                    </h1>
+                    <ul class="intro__list">
+                        <li>No hidden fees</li>
+                        <li>Fast scheduling</li>
+                        <li>Eco-Friendly Solutions</li>
+                        <li>Locally Owned & Operated</li>
+                    </ul>
+                    <div class="intro__controls">
+                        <a href="javascript: void(0)" class="cta cta--lg">Get a Free Quote Now</a>
+                        <a href="javascript: void(0)" class="action-call">
+                            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M25.6667 19.74V23.24C25.668 23.5649 25.6014 23.8865 25.4713 24.1842C25.3411 24.4819 25.1502 24.7492 24.9108 24.9688C24.6713 25.1885 24.3887 25.3557 24.0809 25.4598C23.7731 25.5639 23.4469 25.6025 23.1233 25.5733C19.5333 25.1832 16.0848 23.9565 13.055 21.9916C10.2361 20.2004 7.84623 17.8105 6.055 14.9916C4.08331 11.948 2.85629 8.4828 2.47334 4.87664C2.44418 4.55402 2.48252 4.22886 2.58592 3.92187C2.68932 3.61487 2.8555 3.33277 3.0739 3.09353C3.29229 2.85428 3.55811 2.66313 3.85443 2.53225C4.15074 2.40136 4.47107 2.33361 4.795 2.3333H8.295C8.86119 2.32773 9.41009 2.52823 9.83939 2.89743C10.2687 3.26662 10.5491 3.77933 10.6283 4.33997C10.7761 5.46005 11.05 6.55982 11.445 7.6183C11.602 8.03588 11.6359 8.4897 11.5429 8.926C11.4498 9.36229 11.2337 9.76277 10.92 10.08L9.43834 11.5616C11.0992 14.4824 13.5175 16.9008 16.4383 18.5616L17.92 17.08C18.2372 16.7663 18.6377 16.5501 19.074 16.4571C19.5103 16.364 19.9641 16.398 20.3817 16.555C21.4402 16.9499 22.5399 17.2239 23.66 17.3716C24.2267 17.4516 24.7443 17.737 25.1143 18.1737C25.4843 18.6104 25.6809 19.1678 25.6667 19.74Z"
+                                    fill="#18272C" />
+                            </svg>
+                            Call Us
+                        </a>
+                    </div>
+                    <div class="intro__customers">
+                        <div class="intro__customers-pics">
+                            <img src="./assets/imgs/ico/user_1.png" alt="User">
+                            <img src="./assets/imgs/ico/user_2.png" alt="User">
+                            <img src="./assets/imgs/ico/user_3.png" alt="User">
+                            <img src="./assets/imgs/ico/user_4.png" alt="User">
+                        </div>
+                        <div class="intro__customers-info">
+                            <div class="intro__customers-rating">
+                                <img src="./assets/imgs/ico/ico-star.svg" alt="Star">
+                                <img src="./assets/imgs/ico/ico-star.svg" alt="Star">
+                                <img src="./assets/imgs/ico/ico-star.svg" alt="Star">
+                                <img src="./assets/imgs/ico/ico-star.svg" alt="Star">
+                                <img src="./assets/imgs/ico/ico-star.svg" alt="Star">
+                            </div>
+                            <p class="intro__customers-text">
+                                Customers rate us <span>5.0 on 246</span> reviews on Google
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <img src="./assets/imgs/hero.jpg" alt="" class="intro__bg">
+        </section>
+        <section class="info">
+            <div class="container">
+                <div class="info__block">
+                    <div class="info__descr">
+                        <h2 class="main-title">Deep Cleaning Is a Must for Modern Homes</h2>
+                        <div class="info__texts">
+                            <p class="info__text">
+                                Most people don’t realize that kids’ stains, wear and tear, and strong pet smells can be
+                                removed or greatly reduced. With the right process, a “tired” sofa turns into a clean,
+                                fresh
+                                centerpiece again — the kind of couch you’re proud to sit on yourself and happy to
+                                invite
+                                guests to.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="info__pic">
+                        <img loading="lazy" decoding="async" src="./assets/imgs/info_1.jpg" alt="Picture">
+                        <div class="info__deco">
+                            <img src="./assets/imgs/ico/deco_1.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="info__block">
+                    <div class="info__descr">
+                        <div class="info__texts">
+                            <p class="info__text">
+                                At the same time, your couch is where you spend hours with your family — and it quietly
+                                collects dust, mold spores, bacteria, pet dander, and even parasite eggs if your cats or
+                                dogs love that spot. The same happens with rugs and mattresses. That’s why I’m sure of
+                                one
+                                thing: deep cleaning of furniture, rugs, and mattresses is not a luxury — it’s the basic
+                                hygiene of your space.
+                            </p>
+                            <p class="info__text">
+                                Charlotte Steamers is my way to bring that standard into modern homes in Charlotte, one
+                                couch at a time.
+                            </p>
+                        </div>
+                        <p class="info__subtitle">Kyryl Vyhovskyi, Owner of Charlotte Steamers</p>
+                        <div class="info__icon">
+                            <img src="./assets/imgs/ico/flower.svg" alt="Icon">
+                        </div>
+                    </div>
+                    <div class="info__pic">
+                        <img loading="lazy" decoding="async" src="./assets/imgs/info_2.jpg" alt="Picture">
+                        <div class="info__deco">
+                            <img src="./assets/imgs/ico/deco_2.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="quiz">
+            <div class="container--left">
+                <div class="quiz__pic">
+                    <img loading="lazy" decoding="async" src="./assets/imgs/quiz.jpg" alt="Picture">
+                </div>
+                <div class="quiz__flow">
+                    <div class="quiz__form js-form-quiz">
+                        <form>
+                            <div class="quiz__steps">
+                                <div class="quiz__step">
+                                    <div class="quiz__content">
+                                        <h2 class="main-title">
+                                            What would you like to clean today?
+                                        </h2>
+                                        <div class="quiz__wrapper">
+                                            <div class="quiz__checks">
+                                                <div class="quiz__check">
+                                                    <input class="quiz__handler" type="radio" name="step_1"
+                                                        id="check_step_1_1" value="Couch">
+                                                    <label class="quiz__variant" for="check_step_1_1">
+                                                        Couch
+                                                    </label>
+                                                </div>
+                                                <div class="quiz__check">
+                                                    <input class="quiz__handler" type="radio" name="step_1"
+                                                        id="check_step_2_1" value="Mattress">
+                                                    <label class="quiz__variant" for="check_step_2_1">
+                                                        Mattress
+                                                    </label>
+                                                </div>
+                                                <div class="quiz__check">
+                                                    <input class="quiz__handler" type="radio" name="step_1"
+                                                        id="check_step_3_1" value="Chair">
+                                                    <label class="quiz__variant" for="check_step_3_1">
+                                                        Chair
+                                                    </label>
+                                                </div>
+                                                <div class="quiz__check">
+                                                    <input class="quiz__handler" type="radio" name="step_1"
+                                                        id="check_step_4_1" value="Area Rug / Carpet">
+                                                    <label class="quiz__variant" for="check_step_4_1">
+                                                        Area Rug / Carpet
+                                                    </label>
+                                                </div>
+                                                <div class="quiz__check">
+                                                    <input class="quiz__handler" type="radio" name="step_1"
+                                                        id="check_step_5_1" value="Patio Furniture">
+                                                    <label class="quiz__variant" for="check_step_5_1">
+                                                        Patio Furniture
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <button type="button" class="quiz__btn">NEXT</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="quiz__step">
+                                    <div class="quiz__content">
+                                        <h2 class="main-title">
+                                            Why do you want to order cleaning?
+                                        </h2>
+                                        <div class="quiz__wrapper">
+                                            <div class="quiz__checks">
+                                                <div class="quiz__check">
+                                                    <input class="quiz__handler" type="radio" name="step_2"
+                                                        id="check_step_1_2" value="Stains">
+                                                    <label class="quiz__variant" for="check_step_1_2">
+                                                        Stains
+                                                    </label>
+                                                </div>
+                                                <div class="quiz__check">
+                                                    <input class="quiz__handler" type="radio" name="step_2"
+                                                        id="check_step_2_2" value="Unpleasant smell">
+                                                    <label class="quiz__variant" for="check_step_2_2">
+                                                        Unpleasant smell
+                                                    </label>
+                                                </div>
+                                                <div class="quiz__check">
+                                                    <input class="quiz__handler" type="radio" name="step_2"
+                                                        id="check_step_3_2" value="Dirty">
+                                                    <label class="quiz__variant" for="check_step_3_2">
+                                                        Dirty
+                                                    </label>
+                                                </div>
+                                                <div class="quiz__check">
+                                                    <input class="quiz__handler" type="radio" name="step_2"
+                                                        id="check_step_4_2" value="Allergy">
+                                                    <label class="quiz__variant" for="check_step_4_2">
+                                                        Allergy
+                                                    </label>
+                                                </div>
+                                                <div class="quiz__check">
+                                                    <input class="quiz__handler" type="radio" name="step_2"
+                                                        id="check_step_5_2" value="Prevention">
+                                                    <label class="quiz__variant" for="check_step_5_2">
+                                                        Prevention
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <button type="button" class="quiz__btn">NEXT</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="quiz__step">
+                                    <div class="quiz__content">
+                                        <h2 class="main-title">
+                                            When are you interested?
+                                        </h2>
+                                        <div class="quiz__wrapper">
+                                            <div class="quiz__checks">
+                                                <div class="quiz__check">
+                                                    <input class="quiz__handler" type="radio" name="step_3"
+                                                        id="check_step_1_3" value="Nearest time">
+                                                    <label class="quiz__variant" for="check_step_1_3">
+                                                        Nearest time
+                                                    </label>
+                                                </div>
+                                                <div class="quiz__check">
+                                                    <input class="quiz__handler" type="radio" name="step_3"
+                                                        id="check_step_2_3" value="During the week">
+                                                    <label class="quiz__variant" for="check_step_2_3">
+                                                        During the week
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <button type="button" class="quiz__btn">NEXT</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="quiz__step">
+                                    <div class="quiz__content">
+                                        <h2 class="main-title">
+                                            Please leave
+                                            your phone number
+                                        </h2>
+                                        <div class="quiz__wrapper">
+                                            <div class="quiz__fields">
+                                                <div class="quiz__field">
+                                                    <input name="quizName" id="quizName" type="text" placeholder="Name">
+                                                </div>
+                                                <div class="quiz__field">
+                                                    <input name="quizPhone" id="quizPhone" type="text"
+                                                        placeholder="Phone number">
+                                                </div>
+                                            </div>
+                                            <button type="submit" class="quiz__btn">
+                                                Get the Best Offer
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="quiz__result">
+                                <div class="quiz__progress">
+                                    <span></span>
+                                </div>
+                                <span class="quiz__val"></span>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="location">
+            <div class="container">
+                <div class="location__map">
+                    <img loading="lazy" decoding="async" src="./assets/imgs/map.jpg" alt="Map">
+                </div>
+                <div class="location__info">
+                    <h2 class="main-title">Area We Serve</h2>
+                    <ul class="location__list">
+                        <li>Charlotte, NC</li>
+                        <li>Concord, NC</li>
+                        <li>Gastonia, NC</li>
+                        <li>Rock Hill, SC</li>
+                        <li>Huntersville, NC</li>
+                        <li>Kannapolis, NC</li>
+                        <li>Indian Trail, NC</li>
+                        <li>Monroe, NC</li>
+                        <li>Matthews, NC</li>
+                        <li>Cornelius, NC</li>
+                        <li>Pineville, NC</li>
+                        <li>Salisbury, NC</li>
+                        <li>Fort Mill, SC</li>
+                        <li>Statesville, NC</li>
+                        <li>Mint Hill, NC</li>
+                        <li>Stallings, NC</li>
+                        <li>Davidson, NC</li>
+                        <li>Waxhaw, NC</li>
+                        <li>Hickory, NC</li>
+                    </ul>
+                    <div class="location__pic">
+                        <img loading="lazy" decoding="async" src="./assets/imgs/ico/bus.svg" alt="Picture">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="action">
+            <div class="container">
+                <div class="action__content">
+                    <h2 class="main-title">Book your cleaning now and get the best price</h2>
+                    <p class="action__subtitle">Give new life to your sofa, mattress and carpets</p>
+                </div>
+                <div class="action__controls">
+                    <a href="javascript: void(0)" class="cta cta--lg cta--drk">
+                        Get a Free Quote Now
+                    </a>
+                    <a href="javascript: void(0)" class="action-call action-call--wht">
+                        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M25.6667 19.74V23.24C25.668 23.5649 25.6014 23.8865 25.4713 24.1842C25.3411 24.4819 25.1502 24.7492 24.9108 24.9688C24.6713 25.1885 24.3887 25.3557 24.0809 25.4598C23.7731 25.5639 23.4469 25.6025 23.1233 25.5733C19.5333 25.1832 16.0848 23.9565 13.055 21.9916C10.2361 20.2004 7.84623 17.8105 6.055 14.9916C4.08331 11.948 2.85629 8.4828 2.47334 4.87664C2.44418 4.55402 2.48252 4.22886 2.58592 3.92187C2.68932 3.61487 2.8555 3.33277 3.0739 3.09353C3.29229 2.85428 3.55811 2.66313 3.85443 2.53225C4.15074 2.40136 4.47107 2.33361 4.795 2.3333H8.295C8.86119 2.32773 9.41009 2.52823 9.83939 2.89743C10.2687 3.26662 10.5491 3.77933 10.6283 4.33997C10.7761 5.46005 11.05 6.55982 11.445 7.6183C11.602 8.03588 11.6359 8.4897 11.5429 8.926C11.4498 9.36229 11.2337 9.76277 10.92 10.08L9.43834 11.5616C11.0992 14.4824 13.5175 16.9008 16.4383 18.5616L17.92 17.08C18.2372 16.7663 18.6377 16.5501 19.074 16.4571C19.5103 16.364 19.9641 16.398 20.3817 16.555C21.4402 16.9499 22.5399 17.2239 23.66 17.3716C24.2267 17.4516 24.7443 17.737 25.1143 18.1737C25.4843 18.6104 25.6809 19.1678 25.6667 19.74Z"
+                                fill="#18272C" />
+                        </svg>
+                        Call Us
+                    </a>
+                </div>
+            </div>
+        </section>
+        <section class="articles">
+            <div class="container">
+                <div class="articles__slider swiper js-articles-slider">
+                    <div class="articles__wrapper swiper-wrapper">
+                        <div class="articles__slide swiper-slide">
+                            <a href="javascript: void(0)" class="article-box">
+                                <div class="article-box__pic">
+                                    <img src="./assets/imgs/slide_1.jpg" alt="Picture">
+                                </div>
+                                <span class="article-box__tag">ECO-FRIENDLY</span>
+                                <h3 class="article-box__title">
+                                    TOP 5 FURNITURE CLEANING SOLUTIONS
+                                </h3>
+                                <p class="article-box__descr">
+                                    Audiences of any size are inspired to develop the skills and confidence to Ditch the
+                                    Pitch and capture customers’ interest in every conversation.
+                                </p>
+                                <span class="article-box__cta">Learn More</span>
+                            </a>
+                        </div>
+                        <div class="articles__slide swiper-slide">
+                            <a href="javascript: void(0)" class="article-box">
+                                <div class="article-box__pic">
+                                    <img src="./assets/imgs/slide_2.jpg" alt="Picture">
+                                </div>
+                                <span class="article-box__tag">ECO-FRIENDLY</span>
+                                <h3 class="article-box__title">
+                                    TOP 5 FURNITURE CLEANING SOLUTIONS
+                                </h3>
+                                <p class="article-box__descr">
+                                    Audiences of any size are inspired to develop the skills and confidence to Ditch the
+                                    Pitch and capture customers’ interest in every conversation.
+                                </p>
+                                <span class="article-box__cta">Learn More</span>
+                            </a>
+                        </div>
+                        <div class="articles__slide swiper-slide">
+                            <a href="javascript: void(0)" class="article-box">
+                                <div class="article-box__pic">
+                                    <img src="./assets/imgs/slide_3.jpg" alt="Picture">
+                                </div>
+                                <span class="article-box__tag">ECO-FRIENDLY</span>
+                                <h3 class="article-box__title">
+                                    TOP 5 FURNITURE CLEANING SOLUTIONS
+                                </h3>
+                                <p class="article-box__descr">
+                                    Audiences of any size are inspired to develop the skills and confidence to Ditch the
+                                    Pitch and capture customers’ interest in every conversation.
+                                </p>
+                                <span class="article-box__cta">Learn More</span>
+                            </a>
+                        </div>
+                        <div class="articles__slide swiper-slide">
+                            <a href="javascript: void(0)" class="article-box">
+                                <div class="article-box__pic">
+                                    <img src="./assets/imgs/slide_4.jpg" alt="Picture">
+                                </div>
+                                <span class="article-box__tag">ECO-FRIENDLY</span>
+                                <h3 class="article-box__title">
+                                    TOP 5 FURNITURE CLEANING SOLUTIONS
+                                </h3>
+                                <p class="article-box__descr">
+                                    Audiences of any size are inspired to develop the skills and confidence to Ditch the
+                                    Pitch and capture customers’ interest in every conversation.
+                                </p>
+                                <span class="article-box__cta">Learn More</span>
+                            </a>
+                        </div>
+                        <div class="articles__slide swiper-slide">
+                            <a href="javascript: void(0)" class="article-box">
+                                <div class="article-box__pic">
+                                    <img src="./assets/imgs/slide_2.jpg" alt="Picture">
+                                </div>
+                                <span class="article-box__tag">ECO-FRIENDLY</span>
+                                <h3 class="article-box__title">
+                                    TOP 5 FURNITURE CLEANING SOLUTIONS
+                                </h3>
+                                <p class="article-box__descr">
+                                    Audiences of any size are inspired to develop the skills and confidence to Ditch the
+                                    Pitch and capture customers’ interest in every conversation.
+                                </p>
+                                <span class="article-box__cta">Learn More</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__panel">
+                <div class="footer__info">
+                    <a href="javascript: void(0)" class="footer__logo">
+                        <img decoding="async" loading="lazy" src="./assets/imgs/ico/logo_wht.svg" alt="Logo">
+                    </a>
+                    <ul class="footer__socials">
+                        <li>
+                            <a href="https://www.facebook.com/" target="_blank">
+                                <img decoding="async" loading="lazy" width="55" height="55"
+                                    src="./assets/imgs/ico/ico-facebok.svg" alt="Facebook">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/" target="_blank">
+                                <img decoding="async" loading="lazy" width="55" height="55"
+                                    src="./assets/imgs/ico/ico-instagram.svg" alt="Instagram">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer__nav">
+                    <div class="footer__routes">
+                        <p class="footer__title">Pages</p>
+                        <ul class="footer__menu">
+                            <li><a href="javascript: void(0)">Homepage</a></li>
+                            <li><a href="javascript: void(0)">About</a></li>
+                            <li><a href="javascript: void(0)">Hiring</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__routes">
+                        <p class="footer__title">Services</p>
+                        <ul class="footer__menu">
+                            <li><a href="javascript: void(0)">Couch Cleaning</a></li>
+                            <li><a href="javascript: void(0)">Mattress Cleaning</a></li>
+                            <li><a href="javascript: void(0)">Chair Cleaning</a></li>
+                            <li><a href="javascript: void(0)">Rug Cleaning</a></li>
+                            <li><a href="javascript: void(0)">Curtain Cleaning</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__routes">
+                        <p class="footer__title">Resources</p>
+                        <ul class="footer__menu">
+                            <li><a href="javascript: void(0)">FAQs</a></li>
+                            <li><a href="javascript: void(0)">Blog</a></li>
+                            <li><a href="javascript: void(0)">Reviews</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer__contacts">
+                    <ul class="footer__communication">
+                        <li>
+                            <img decoding="async" width="16" height="16" loading="lazy"
+                                src="./assets/imgs/ico/ico-pin.svg" alt="Icon">
+                            <p>Charlotte, NC</p>
+                        </li>
+                        <li>
+                            <a href="tel:+19803046427">
+                                <img decoding="async" width="16" height="16" loading="lazy"
+                                    src="./assets/imgs/ico/ico-call.svg" alt="Icon">
+                                +1 980 304 64 27
+                            </a>
+                        </li>
+                        <li>
+                            <a href="mailto:support@couch-steamers.com">
+                                <img decoding="async" width="16" height="16" loading="lazy"
+                                    src="./assets/imgs/ico/ico-mess.svg" alt="Icon">
+                                support@couch-steamers.com
+                            </a>
+                        </li>
+                    </ul>
+                    <a href="javascript: void(0)" class="cta cta--lg">Get a Free Quote Now</a>
+                </div>
+            </div>
+            <div class="footer__lawer">
+                <ul class="footer__legals">
+                    <li><a href="javascript: void(0)">Terms of Use</a></li>
+                    <li><a href="javascript: void(0)">Privsacy Policy</a></li>
+                </ul>
+                <p class="footer__copy">© 2026 COUCH STEAMERS. All rights reserved</p>
+            </div>
+            <div class="footer__deco">
+                <img decoding="async" loading="lazy" src="./assets/imgs/ico/call-deco.svg" alt="">
+            </div>
+        </div>
+    </footer>
 </body>
 
 </html>
