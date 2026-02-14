@@ -1,0 +1,82 @@
+@use '../base/media' as *;
+@use '../base/mixins' as *;
+@use '../base/var' as *;
+
+.faq-box {
+    padding: rem(20px) rem(40px);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: rem(20px);
+
+    &:not(:last-child) {
+        border-bottom: 1px solid #a4a4a4;
+    }
+
+    &.is-open {
+        .faq-box__text {
+            grid-template-rows: 1fr;
+
+            p {
+                margin-top: rem(20px);
+            }
+        }
+
+        svg {
+            transform: rotate(180deg);
+            rect {
+                fill: $dark_color;
+            }
+
+            path {
+                stroke: $color_accent;
+            }
+        }
+    }
+
+    &__title {
+        font: 500 #{rem(24px)} / 130% $ff_base;
+        color: #000;
+    }
+
+    &__head {
+        display: flex;
+        align-items: center;
+        gap: rem(20px);
+    }
+
+    &__text {
+        display: grid;
+        grid-template-rows: 0fr;
+        @include transitions(0.5s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+        p {
+            font: 400 #{rem(20px)} / 130% $ff_base;
+            overflow: hidden;
+            @include transitions(
+                0.5s,
+                cubic-bezier(0.768, 0.304, 0.496, 0.884)
+            );
+        }
+    }
+
+    svg {
+        flex-shrink: 0;
+        width: rem(32px);
+        height: rem(32px);
+        @include transitions(0.5s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+        rect {
+            fill: $color_accent;
+            @include transitions(
+                0.5s,
+                cubic-bezier(0.768, 0.304, 0.496, 0.884)
+            );
+        }
+
+        path {
+            @include transitions(
+                0.5s,
+                cubic-bezier(0.768, 0.304, 0.496, 0.884)
+            );
+        }
+    }
+}

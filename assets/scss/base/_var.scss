@@ -2,12 +2,14 @@
 @use 'mixins' as *;
 
 $ff_accent: 'Instrument Serif', sans-serif;
+$ff_accent_it: 'Instrument Serif It', sans-serif;
 $ff_base: 'Alexandria', sans-serif;
 
 $color_accent: #bfea00;
 $color_text: #18272c;
 $dark_color: #18272c;
-$light_color: #fff;
+$white_color: #fff;
+$light_color: #e8eaed;
 
 $section_indent: #{rem(100px)};
 $container_width: #{rem(1232px)};

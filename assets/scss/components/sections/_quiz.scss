@@ -1,0 +1,210 @@
+@use '../../base/media' as *;
+@use '../../base/mixins' as *;
+@use '../../base/var' as *;
+
+.quiz {
+    background: #e8eaed;
+
+    &__pic {
+        width: 60%;
+
+        img {
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__flow {
+        flex-shrink: 0;
+        padding-block: $section_indent;
+        padding-right: $container_pdd;
+        width: 40%;
+    }
+
+    &__form {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        max-width: rem(433px);
+        margin-left: auto;
+    }
+
+    form {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__result {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: rem(10px);
+        max-width: rem(300px);
+        width: 100%;
+        margin: auto auto;
+    }
+
+    &__val {
+        font: 300 #{rem(20px)} / 130% $ff_base;
+        color: #000;
+    }
+
+    &__progress {
+        width: 100%;
+        height: rem(4px);
+        position: relative;
+        background: $white_color;
+
+        span {
+            position: absolute;
+            height: 100%;
+            background: $color_accent;
+            @include transitions(
+                0.3s,
+                cubic-bezier(0.768, 0.304, 0.496, 0.884)
+            );
+        }
+    }
+
+    &__step {
+        display: none;
+
+        &.is-active {
+            display: block;
+        }
+    }
+
+    &__wrapper {
+        min-height: rem(351px);
+        max-width: rem(360px);
+        margin: 0 auto rem(60px);
+    }
+
+    &__fields {
+        display: flex;
+        flex-direction: column;
+        gap: rem(16px);
+    }
+
+    &__field {
+        input {
+            width: 100%;
+            font: 300 #{rem(24px)} / 130% $ff_base;
+            padding: 0;
+            outline: none;
+            border: none;
+            background: transparent;
+            padding: rem(11px) rem(19px);
+            border-radius: rem(8px);
+            border: 1px solid $dark_color;
+            color: #000;
+            &::placeholder {
+                color: rgba(0, 0, 0, 0.5);
+            }
+        }
+    }
+
+    &__checks {
+        display: flex;
+        flex-direction: column;
+        gap: rem(8px);
+    }
+
+    &__check {
+        position: relative;
+
+        &.is-error {
+            .quiz__variant {
+                border-color: red;
+            }
+        }
+    }
+
+    &__handler {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 1px;
+        height: 1px;
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    &__variant {
+        font: 300 #{rem(24px)} / 130% $ff_base;
+        display: inline-flex;
+        padding: rem(8px);
+        border-radius: rem(8px);
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        border: 1px solid transparent;
+        color: #000;
+        background: #ffffff99;
+        @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+        @include hover {
+            border-color: $dark_color;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            right: rem(16px);
+            top: 50%;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-70%);
+            display: inline-flex;
+            width: rem(32px);
+            height: rem(32px);
+            flex-shrink: 0;
+            background: url('../imgs/ico/quiz-complete.svg') no-repeat center
+                center / cover;
+            @include transitions(
+                0.3s,
+                cubic-bezier(0.768, 0.304, 0.496, 0.884)
+            );
+        }
+    }
+
+    &__btn {
+        padding: rem(12px);
+        width: 100%;
+        margin-top: rem(36px);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font: 400 #{rem(24px)} / 100% $ff_accent;
+        text-transform: uppercase;
+        border-radius: rem(8px);
+        background: $color_accent;
+        @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+
+        &:hover {
+            background: #b8de0c;
+        }
+
+        &:active {
+            background: #b0d317;
+        }
+    }
+
+    .main-title {
+        line-height: 100%;
+        text-align: center;
+        margin-bottom: rem(60px);
+    }
+
+    .container--left {
+        display: flex;
+        gap: rem(50px);
+    }
+}
+
+.quiz__handler:checked + .quiz__variant::after {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(-50%);
+}

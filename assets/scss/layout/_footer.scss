@@ -3,4 +3,184 @@
 @use '../base/var' as *;
 
 .footer {
+    overflow: hidden;
+    padding-block: rem(50px) rem(40px);
+    background: $dark_color;
+    color: $light_color;
+
+    &__panel {
+        display: flex;
+        justify-content: space-between;
+        gap: rem(20px);
+    }
+
+    &__title {
+        font: 600 #{rem(16px)} / 130% $ff_base;
+        text-transform: uppercase;
+        margin-bottom: rem(15px);
+        margin-bottom: rem(15px);
+    }
+
+    &__logo {
+        max-width: rem(126px);
+
+        img {
+            width: 100%;
+        }
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        gap: rem(10px);
+    }
+
+    &__socials {
+        display: flex;
+        align-items: center;
+        gap: rem(20px);
+        margin-top: auto;
+
+        li {
+            display: inline-flex;
+            flex-shrink: 0;
+            width: rem(55px);
+            height: rem(55px);
+        }
+
+        a {
+            width: 100%;
+            height: 100%;
+            @include transitions(
+                0.3s,
+                cubic-bezier(0.768, 0.304, 0.496, 0.884)
+            );
+            @include hover {
+                transform: scale(1.05);
+            }
+        }
+    }
+
+    &__contacts {
+        display: flex;
+        flex-direction: column;
+        gap: rem(40px);
+    }
+
+    &__communication {
+        display: flex;
+        flex-direction: column;
+        gap: rem(20px);
+
+        li {
+            display: inline-flex;
+            align-items: center;
+            gap: rem(7px);
+        }
+
+        img {
+            flex-shrink: 0;
+            width: rem(16px);
+            height: rem(16px);
+        }
+
+        a {
+            font: 400 #{rem(16px)} / 120% $ff_base;
+            color: $white_color;
+            display: inline-flex;
+            align-items: center;
+            gap: rem(7px);
+            @include transitions(
+                0.3s,
+                cubic-bezier(0.768, 0.304, 0.496, 0.884)
+            );
+            @include hover {
+                color: $color_accent;
+            }
+        }
+
+        p {
+            font: 400 #{rem(16px)} / 120% $ff_base;
+            color: $white_color;
+        }
+    }
+
+    &__nav {
+        max-width: rem(356px);
+        width: 100%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: rem(20px);
+    }
+
+    &__menu {
+        display: flex;
+        flex-direction: column;
+        gap: rem(10px);
+        li {
+            font: 400 #{rem(12px)} / 130% $ff_base;
+        }
+
+        a {
+            font: inherit;
+            @include transitions(
+                0.3s,
+                cubic-bezier(0.768, 0.304, 0.496, 0.884)
+            );
+            @include hover {
+                color: $color_accent;
+            }
+        }
+    }
+
+    &__lawer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: rem(20px);
+    }
+
+    &__legals {
+        display: flex;
+        align-items: center;
+        gap: rem(21px);
+
+        li {
+            font: 600 #{rem(12px)} / 130% $ff_base;
+        }
+
+        a {
+            font: inherit;
+            @include transitions(
+                0.3s,
+                cubic-bezier(0.768, 0.304, 0.496, 0.884)
+            );
+            @include hover {
+                color: $color_accent;
+            }
+        }
+    }
+
+    &__copy {
+        font: 300 #{rem(12px)} / 130% $ff_base;
+    }
+
+    &__deco {
+        position: absolute;
+        top: rem(0px);
+        right: rem(0px);
+        transform: translate(25%, -25%);
+    }
+
+    .cta {
+        color: $color_text;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: rem(60px);
+        position: relative;
+    }
 }

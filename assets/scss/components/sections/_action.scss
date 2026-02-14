@@ -1,0 +1,55 @@
+@use '../../base/media' as *;
+@use '../../base/mixins' as *;
+@use '../../base/var' as *;
+
+.action {
+    padding-block: $section_indent;
+    background: $color_accent;
+    overflow: hidden;
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        gap: rem(20px);
+        max-width: rem(806px);
+        margin: 0 auto;
+    }
+
+    &__subtitle {
+        font: 400 #{rem(24px)} / 130% $ff_base;
+    }
+
+    &__controls {
+        z-index: 2;
+        display: flex;
+        position: relative;
+        gap: rem(8px);
+
+        &::after {
+            content: '';
+            z-index: -1;
+            position: absolute;
+            pointer-events: none;
+            right: rem(-200px);
+            top: 50%;
+            transform: translateY(-50%);
+            width: rem(104px);
+            height: rem(104px);
+            background: url('../imgs/ico/stars.svg') no-repeat center center / cover;
+        }
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: rem(60px);
+        align-items: center;
+    }
+
+    .main-title {
+        font-size: rem(52px);
+        line-height: 42px;
+    }
+}

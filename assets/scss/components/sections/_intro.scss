@@ -1,0 +1,65 @@
+@use '../../base/media' as *;
+@use '../../base/mixins' as *;
+@use '../../base/var' as *;
+
+.intro {
+    display: flex;
+    min-height: 100vh;
+    min-height: 100svh;
+    position: relative;
+
+    &__content {
+        padding-block: rem(60px);
+        max-width: rem(602px);
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: rem(8px);
+        margin-bottom: rem(60px);
+
+        li {
+            font: 400 #{rem(16px)} / 130% $ff_base;
+            text-transform: uppercase;
+            display: inline-flex;
+            align-items: center;
+            gap: rem(4px);
+
+            &::before {
+                content: '';
+                display: inline-flex;
+                flex-shrink: 0;
+                width: rem(20px);
+                height: rem(20px);
+                background: url('../imgs/ico/ico-check.svg') no-repeat
+                    center center / cover;
+            }
+        }
+    }
+
+    &__controls {
+        display: flex;
+        gap: rem(8px);
+    }
+
+    &__bg {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .main-title {
+        margin-bottom: rem(20px);
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        position: relative;
+        z-index: 2;
+    }
+}

@@ -1,0 +1,30 @@
+@use '../../base/media' as *;
+@use '../../base/mixins' as *;
+@use '../../base/var' as *;
+
+.faq {
+    padding-block: $section_indent;
+
+    &__list {
+        max-width: rem(821px);
+        margin: 0 auto;
+    }
+
+    .section-info {
+        max-width: rem(882px);
+        margin: 0 auto rem(55px);
+        position: relative;
+        &::after {
+            content: '';
+            top: -20%;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: -1;
+            position: absolute;
+            width: rem(160px);
+            height: rem(120px);
+            background: url('../imgs/ico/questions.svg') no-repeat center
+                center / cover;
+        }
+    }
+}

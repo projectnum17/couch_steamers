@@ -1,0 +1,37 @@
+@use '../../base/media' as *;
+@use '../../base/mixins' as *;
+@use '../../base/var' as *;
+
+.cta {
+    font: 400 #{rem(24px)} / 100% $ff_accent;
+    text-transform: uppercase;
+    border-radius: rem(10px);
+    padding: rem(12px) rem(16px);
+    background: $color_accent;
+    @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+
+    &:hover {
+        background: #b8de0c;
+    }
+
+    &:active {
+        background: #b0d317;
+    }
+
+    &--lg {
+        padding: rem(15px) rem(26px);
+    }
+
+    &--drk {
+        background: $dark_color;
+        color: $white_color;
+
+        &:hover {
+            background: #0e2c36;
+        }
+
+        &:active {
+            background: #003344;
+        }
+    }
+}

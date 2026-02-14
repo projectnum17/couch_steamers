@@ -1,2 +1,5 @@
 @use './ui';
 @use './sections';
+@forward 'city-box';
+@forward 'faq-box';
+@forward 'article-box';

@@ -13,7 +13,7 @@ body {
     display: flex;
     flex-direction: column;
     color: $color_text;
-    background: $light_color;
+    background: $white_color;
 
     &.is-locked {
         overflow: hidden;
@@ -43,4 +43,12 @@ a {
     padding-inline: $container_pdd;
     width: 100%;
     margin: 0 auto;
+}
+
+.container--right {
+    padding-left: calc((100% - $container_width) / 2 + $container_pdd);
+}
+
+.container--left {
+    padding-right: calc((100% - $container_width) / 2 + $container_pdd);
 }

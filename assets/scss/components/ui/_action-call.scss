@@ -1,0 +1,35 @@
+@use '../../base/media' as *;
+@use '../../base/mixins' as *;
+@use '../../base/var' as *;
+
+.action-call {
+    font: 400 #{rem(18px)} / 100% $ff_base;
+    text-transform: uppercase;
+    padding: rem(13px) rem(23px);
+    border-radius: rem(8px);
+    display: inline-flex;
+    align-items: center;
+    gap: rem(8px);
+    border: 1px solid $dark_color;
+    background: transparent;
+    @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+
+    &:hover {
+        background: #18272c1a;
+    }
+
+    &:active {
+        background: #18272c33;
+    }
+
+    svg {
+        display: inline-flex;
+        flex-shrink: 0;
+        width: rem(28px);
+        height: rem(28px);
+    }
+
+    &--wht {
+        background: $white_color;
+    }
+}

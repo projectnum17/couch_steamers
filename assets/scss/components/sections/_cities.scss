@@ -1,0 +1,21 @@
+@use '../../base/media' as *;
+@use '../../base/mixins' as *;
+@use '../../base/var' as *;
+
+.cities {
+    padding-block: $section_indent;
+
+    .section-info {
+        margin-bottom: rem(50px);
+    }
+
+    &__boxes {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: rem(40px);
+    }
+
+    .city-box {
+        max-width: 100%;
+    }
+}

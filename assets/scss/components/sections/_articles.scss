@@ -1,0 +1,16 @@
+@use '../../base/media' as *;
+@use '../../base/mixins' as *;
+@use '../../base/var' as *;
+
+.articles {
+    overflow: hidden;
+    padding-block: $section_indent;
+
+    &__slider {
+        overflow: visible;
+    }
+
+    &__slide {
+        height: auto;
+    }
+}
