@@ -1,0 +1,71 @@
+@use '../base/media' as *;
+@use '../base/mixins' as *;
+@use '../base/var' as *;
+
+.price-box {
+    display: flex;
+    flex-direction: column;
+    @include hover {
+        .price-box__pic {
+            transform: translateY(-2%);
+        }
+        .price-box__cta {
+            background: $dark_color;
+            color: $white_color;
+        }
+    }
+
+    &__pic {
+        width: 100%;
+        @include transitions(0.5s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+        img {
+            width: 100%;
+        }
+    }
+
+    &__info {
+        padding-inline: rem(20px);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: rem(10px);
+    }
+
+    &__descr {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    &__name {
+        font: 600 #{rem(20px)} / 130% $ff_base;
+    }
+
+    &__prices {
+        display: flex;
+        align-items: center;
+        gap: rem(4px);
+    }
+
+    &__old,
+    &__new {
+        font: 400 #{rem(20px)} / 130% $ff_base;
+    }
+
+    &__old {
+        color: rgba(24, 39, 44, 0.5);
+        text-decoration: line-through;
+    }
+
+    &__cta {
+        font: 400 #{rem(14px)} / 100% $ff_base;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        text-transform: uppercase;
+        border-radius: rem(8px);
+        border: 1px solid $dark_color;
+        padding: rem(11px) rem(17px);
+        @include transitions(0.5s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+    }
+}

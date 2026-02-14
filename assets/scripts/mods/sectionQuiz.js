@@ -78,8 +78,10 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
 
             const stepEl = steps[currentStep];
-
             if (!validateStep(stepEl)) return;
+
+            form.reset();
+            showStep(0);
 
             console.log('Quiz submitted');
         });

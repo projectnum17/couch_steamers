@@ -6,19 +6,21 @@
     background: #e8eaed;
 
     &__pic {
-        width: 60%;
+        max-height: rem(850px);
+        max-width: rem(1200px);
 
         img {
             height: 100%;
+            width: 100%;
             object-fit: cover;
         }
     }
 
     &__flow {
         flex-shrink: 0;
+        padding-left: rem(54px);
         padding-block: $section_indent;
         padding-right: $container_pdd;
-        width: 40%;
     }
 
     &__form {
@@ -42,7 +44,7 @@
         gap: rem(10px);
         max-width: rem(300px);
         width: 100%;
-        margin: auto auto;
+        margin: auto auto 0 auto;
     }
 
     &__val {
@@ -198,6 +200,7 @@
     }
 
     .container--left {
+        justify-content: flex-end;
         display: flex;
         gap: rem(50px);
     }

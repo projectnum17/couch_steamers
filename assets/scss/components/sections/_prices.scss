@@ -1,0 +1,17 @@
+@use '../../base/media' as *;
+@use '../../base/mixins' as *;
+@use '../../base/var' as *;
+
+.prices {
+    padding-block: $section_indent;
+
+    &__cards {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: rem(72px) rem(40px);
+    }
+
+    .section-info {
+        margin-bottom: rem(50px);
+    }
+}
