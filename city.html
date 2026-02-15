@@ -16,6 +16,8 @@
     <script defer src="./assets/scripts/mods/sectionFaq.js"></script>
     <script defer src="./assets/scripts/mods/sectionArticles.js"></script>
     <script defer src="./assets/scripts/mods/sectionQuiz.js"></script>
+    <script defer src="./assets/scripts/mods/offerModal.js"></script>
+    <script defer src="./assets/scripts/mods/contactModal.js"></script>
     <script defer src="./assets/scripts/main.js"></script>
 </head>
 
@@ -1075,6 +1077,68 @@
             </div>
         </div>
     </footer>
+    <div class="offer-modal modal-overlay js-offer-modal">
+        <div class="container">
+            <div class="offer-modal__box js-offer-content">
+                <button type="button" class="offer-modal__close js-offer-close">
+                    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect y="19.7988" width="28" height="2" transform="rotate(-45 0 19.7988)" fill="black" />
+                        <rect width="28" height="2"
+                            transform="matrix(-0.707107 -0.707107 -0.707107 0.707107 21.2134 19.7988)" fill="black" />
+                    </svg>
+                </button>
+                <div class="offer-modal__content">
+                    <h2 class="main-title">Mattress Cleaning</h2>
+                    <div class="offer-modal__info">
+                        <div class="offer-modal__pics">
+                            <img src="./assets/imgs/r_1.jpg" alt="Picture">
+                            <img src="./assets/imgs/r_1_1.jpg" alt="Picture">
+                        </div>
+                        <div class="offer-modal__about">
+                            <p class="offer-modal__text">
+                                Most people don’t realize that kids’ stains, wear and tear, and strong pet smells can be removed or greatly reduced. 
+                            </p>
+                            <p class="offer-modal__text">
+                                With the right process, a “tired” sofa turns into a clean, fresh centerpiece again — the kind of couch you’re proud to sit on yourself and happy to invite guests to.
+                            </p>
+                            <a href="javascript: void(0)" class="cta cta--lg js-offer-close">
+                                Get a Free Quote Now
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="contact-modal modal-overlay js-contact-modal">
+        <div class="container">
+            <div class="contact-modal__box js-contact-content">
+                <h2 class="main-title">Request an acccurate estimate</h2>
+                <p class="contact-modal__subtitle">
+                    Give new life to your sofa, mattress and carpets
+                </p>
+                <div class="contact-modal__form">
+                    <form>
+                        <div class="contact-modal__fields">
+                            <div class="contact-modal__field">
+                                <input id="contactModalName" name="contactModalName" type="text" placeholder="Name">
+                            </div>
+                            <div class="contact-modal__field">
+                                <input id="contactModalPhone" name="contactModalPhone" type="number" placeholder="Phone number">
+                            </div>
+                            <div class="contact-modal__field">
+                                <input id="contactModalEmail" name="contactModalEmail" type="email" placeholder="Email">
+                            </div>
+                            <div class="contact-modal__field">
+                                <input id="contactModalZip" name="contactModalZip" type="number" placeholder="Zip code">
+                            </div>
+                        </div>
+                        <button type="submit" class="cta">Get a free quote</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

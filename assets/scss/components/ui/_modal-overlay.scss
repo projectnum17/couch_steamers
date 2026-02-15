@@ -1,0 +1,26 @@
+@use '../../base/media' as *;
+@use '../../base/mixins' as *;
+@use '../../base/var' as *;
+
+.modal-overlay {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    height: 100svh;
+    z-index: 20;
+    transform: translateY(-100%);
+    background: #00000066;
+    backdrop-filter: blur(24px);
+    @include transitions(0.5s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+    &.is-show {
+        transform: translateY(0);
+    }
+
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: rem(15px);
+        height: 100%;
+    }
+}
