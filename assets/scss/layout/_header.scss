@@ -21,6 +21,16 @@ body:has(section.intro) {
     }
 }
 
+body:not(:has(.intro)):has(.mobile-menu.is-active) {
+    .header {
+        .header__logo {
+            transform: translateY(-100%);
+            opacity: 0;
+            visibility: hidden;
+        }
+    }
+}
+
 body:has(.mobile-menu.is-active) {
     .header {
         &.is-scroll {
