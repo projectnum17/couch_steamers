@@ -7,10 +7,10 @@
     flex-direction: column;
     max-width: rem(372px);
     width: 100%;
-    gap: rem(20px);
+    gap: rem(8px);
 
-    @include media('mobile') {
-        gap: rem(8px);
+    @include media('tablet_above') {
+        gap: rem(20px);
     }
 
     @include hover {
@@ -29,17 +29,16 @@
         align-items: center;
         justify-content: space-between;
         gap: rem(10px);
-        padding-inline: rem(20px);
-        @include media('mobile') {
-            padding: 0;
+        @include media('tablet_above') {
+            padding-inline: rem(20px);
         }
     }
 
     &__pic {
-        border-radius: rem(20px);
         overflow: hidden;
-        @include media('mobile') {
-            border-radius: rem(12px);
+        border-radius: rem(12px);
+        @include media('tablet_above') {
+            border-radius: rem(20px);
         }
 
         img {
@@ -52,23 +51,23 @@
     }
 
     &__title {
-        font: 600 #{rem(20px)} / 130% $ff_base;
-        @include media('mobile') {
-            font-size: rem(16px);
+        font: 600 #{rem(16px)} / 130% $ff_base;
+        @include media('tablet_above') {
+            font-size: rem(20px);
         }
     }
 
     &__deco {
-        font: 400 #{rem(14px)} / 100% $ff_base;
+        font: 400 #{rem(12px)} / 100% $ff_base;
         display: inline-flex;
         text-transform: uppercase;
-        padding: rem(11px) rem(17px);
+        padding: rem(9px) rem(17px);
         border-radius: rem(8px);
         border: 1px solid $dark_color;
         @include transitions(0.5s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
-        @include media('mobile') {
-            font-size: rem(12px);
-            padding: rem(9px) rem(17px);
+        @include media('tablet_above') {
+            font-size: rem(15px);
+            padding: rem(11px) rem(17px);
         }
     }
 }

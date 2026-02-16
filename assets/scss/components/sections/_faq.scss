@@ -3,9 +3,9 @@
 @use '../../base/var' as *;
 
 .faq {
-    padding-block: var(--section_indent);
-    @include media('mobile') {
-        padding-block: rem(100px);
+    padding-block: rem(100px);
+    @include media('tablet_above') {
+        padding-block: var(--section_indent);
     }
 
     &__list {
@@ -15,14 +15,15 @@
 
     .section-info {
         max-width: rem(882px);
-        margin: 0 auto rem(55px);
         position: relative;
-        @include media('mobile') {
-            margin: 0 auto rem(60px);
+        margin: 0 auto rem(60px);
+
+        @include media('tablet_above') {
+            margin: 0 auto rem(55px);
         }
         &::after {
             content: '';
-            top: -20%;
+            top: -50%;
             left: 50%;
             transform: translateX(-50%);
             z-index: -1;
@@ -31,8 +32,8 @@
             height: rem(120px);
             background: url('../imgs/ico/questions.svg') no-repeat center
                 center / cover;
-            @include media('mobile') {
-                top: -50%;
+            @include media('tablet_above') {
+                top: -20%;
             }
         }
     }

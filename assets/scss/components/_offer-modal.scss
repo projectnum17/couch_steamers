@@ -9,8 +9,7 @@
         position: relative;
         display: flex;
         flex-direction: column;
-        padding: rem(60px);
-        max-width: rem(900px);
+        max-width: 95%;
         width: 100%;
         position: absolute;
         top: 50%;
@@ -24,31 +23,27 @@
         scrollbar-width: none;
 
         -ms-overflow-style: none;
-        @include media('tablet') {
-            max-width: 95%;
-            padding: rem(40px) rem(24px) rem(24px);
-        }
-
-        @include media('mobile') {
-            padding: 0;
+        @include media('tablet_above') {
+            padding: rem(60px);
+            max-width: rem(900px);
         }
     }
 
     &__close {
         position: absolute;
-        width: rem(22px);
-        height: rem(22px);
-        top: rem(20px);
-        right: rem(20px);
+        width: rem(18px);
+        height: rem(18px);
+        top: rem(16px);
+        right: rem(16px);
         @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
         @include hover {
             transform: rotate(90deg);
         }
-        @include media('mobile') {
-            width: rem(18px);
-            height: rem(18px);
-            top: rem(16px);
-            right: rem(16px);
+        @include media('tablet_above') {
+            width: rem(22px);
+            height: rem(22px);
+            top: rem(20px);
+            right: rem(20px);
         }
 
         svg {
@@ -61,63 +56,67 @@
         display: flex;
         gap: rem(20px);
         justify-content: space-between;
+        flex-direction: column;
         width: 100%;
-        @include media('mobile') {
-            flex-direction: column;
+        @include media('tablet_above') {
+            flex-direction: row;
         }
     }
 
     &__about {
-        max-width: rem(367px);
+        padding: rem(0px) rem(24px) rem(24px);
+        max-width: 100%;
         width: 100%;
         display: flex;
         flex-direction: column;
-        @include media('mobile') {
-            max-width: 100%;
-            padding: rem(0px) rem(24px) rem(24px);
+        @include media('tablet_above') {
+            max-width: rem(367px);
+            padding: 0;
         }
     }
 
     &__pics {
         width: 100%;
-        max-width: rem(373px);
         display: flex;
-        flex-direction: column;
         gap: rem(4px);
 
-        @include media('mobile') {
-            overflow: auto;
-            max-width: 100%;
-            margin: 0 auto;
-            flex-direction: row;
-            &::-webkit-scrollbar {
-                display: none;
-            }
+        overflow: auto;
+        max-width: 100%;
+        margin: 0 auto;
+        flex-direction: row;
+        &::-webkit-scrollbar {
+            display: none;
+        }
 
-            scrollbar-width: none;
+        scrollbar-width: none;
 
-            -ms-overflow-style: none;
+        -ms-overflow-style: none;
+
+        @include media('tablet_above') {
+            max-width: rem(373px);
+            flex-direction: column;
         }
 
         img {
             width: 100%;
-            @include media('mobile') {
-                max-width: rem(300px);
+            max-width: rem(300px);
+            @include media('tablet_above') {
+                max-width: 100%;
             }
         }
     }
 
     &__text {
-        font: 300 #{rem(20px)} / 160% $ff_base;
+        font: 300 #{rem(14px)} / 160% $ff_base;
 
-        @include media('mobile') {
-            font-size: rem(14px);
+        @include media('tablet_above') {
+            font-size: rem(20px);
         }
 
         &:not(:last-of-type) {
-            margin-bottom: rem(24px);
-            @include media('mobile') {
-                margin-bottom: rem(12px);
+            margin-bottom: rem(12px);
+            @include media('tablet_above') {
+                margin-bottom: rem(24px);
             }
         }
     }
@@ -125,18 +124,19 @@
     .main-title {
         line-height: 110%;
         text-align: center;
-        margin-bottom: rem(60px);
-        @include media('mobile') {
-            margin-bottom: rem(24px);
-            padding: rem(40px) rem(24px) 0 rem(24px);
+        padding: rem(40px) rem(24px) 0 rem(24px);
+        margin-bottom: rem(24px);
+        @include media('tablet_above') {
+            margin-bottom: rem(60px);
+            padding: 0;
         }
     }
 
     .cta {
-        margin-top: auto;
         justify-content: center;
-        @include media('mobile') {
-            margin-top: rem(12px);
+        margin-top: rem(12px);
+        @include media('tablet_above') {
+            margin-top: auto;
         }
     }
 }

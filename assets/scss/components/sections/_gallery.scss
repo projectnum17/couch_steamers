@@ -4,8 +4,9 @@
 
 .gallery {
     padding-block: rem(50px);
-    @include media('mobile') {
-        display: none;
+    display: none;
+    @include media('tablet_above') {
+        display: block;
     }
     &__cards {
         display: grid;

@@ -40,9 +40,9 @@
     }
 
     &__name {
-        font: 600 #{rem(20px)} / 130% $ff_base;
-        @include media('mobile') {
-            font-size: rem(18px);
+        font: 600 #{rem(18px)} / 130% $ff_base;
+        @include media('tablet_above') {
+            font-size: rem(20px);
         }
     }
 

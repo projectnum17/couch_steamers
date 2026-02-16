@@ -3,19 +3,22 @@
 @use '../base/var' as *;
 
 body:has(section.intro) {
-    @include media('mobile') {
-        .header {
-            &__logo {
-                transform: translateY(-100%);
-                opacity: 0;
-                visibility: hidden;
+    .header {
+        &__logo {
+            transform: translateY(-100%);
+            opacity: 0;
+            visibility: hidden;
+            @include media('tablet_above') {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
             }
-            &.is-scroll {
-                .header__logo {
-                    transform: translateY(0%);
-                    opacity: 1;
-                    visibility: visible;
-                }
+        }
+        &.is-scroll {
+            .header__logo {
+                transform: translateY(0%);
+                opacity: 1;
+                visibility: visible;
             }
         }
     }
@@ -50,10 +53,10 @@ body:has(.mobile-menu.is-active) {
     top: 0;
     width: 100%;
     z-index: 6;
-    padding-block: rem(22px);
+    padding-block: rem(20px);
     @include transitions(0.5s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
-    @include media('mobile') {
-        padding-block: rem(20px);
+    @include media('tablet_above') {
+        padding-block: rem(22px);
     }
 
     &.is-transform {
@@ -67,10 +70,10 @@ body:has(.mobile-menu.is-active) {
     }
 
     &__logo {
-        max-width: rem(126px);
+        max-width: rem(90px);
         @include transitions(0.5s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
-        @include media('tablet') {
-            max-width: rem(90px);
+        @include media('laptop_above') {
+            max-width: rem(126px);
         }
 
         img {
@@ -79,23 +82,23 @@ body:has(.mobile-menu.is-active) {
     }
 
     &__list {
-        display: flex;
-        align-items: center;
-        gap: rem(18px);
-        @include media('tablet') {
-            gap: rem(12px);
+        display: none;
+
+        @include media('tablet_above') {
+            gap: rem(8px);
+            display: flex;
+            align-items: center;
         }
 
-        @include media('mobile') {
-            display: none;
+        @include media('laptop_above') {
+            gap: rem(18px);
         }
 
         li {
-            font: 400 #{rem(16px)} / 130% $ff_base;
+            font: 400 #{rem(14px)} / 130% $ff_base;
             text-transform: uppercase;
-
-            @include media('tablet') {
-                font-size: rem(14px);
+            @include media('laptop_above') {
+                font-size: rem(16px);
             }
 
             a {
@@ -181,21 +184,21 @@ body:has(.mobile-menu.is-active) {
     }
 
     &__controls {
-        display: flex;
-        align-items: center;
-        gap: rem(15px);
-        @include media('mobile') {
-            display: none;
+        display: none;
+        @include media('tablet_above') {
+            display: flex;
+            align-items: center;
+            gap: rem(15px);
         }
     }
 
     &__tel {
-        font: 400 #{rem(16px)} / 130% $ff_base;
+        font: 400 #{rem(14px)} / 130% $ff_base;
         padding: rem(2px) rem(4px);
         border-radius: rem(4px);
         @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
-        @include media('tablet') {
-            font-size: rem(14px);
+        @include media('laptop_above') {
+            font-size: rem(16px);
         }
 
         &:hover {
@@ -208,13 +211,13 @@ body:has(.mobile-menu.is-active) {
     }
 
     &__burger {
-        display: none;
+        display: inline-flex;
         position: relative;
         width: rem(40px);
         height: rem(40px);
         @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
-        @include media('mobile') {
-            display: inline-flex;
+        @include media('tablet_above') {
+            display: none;
         }
 
         &.is-active {

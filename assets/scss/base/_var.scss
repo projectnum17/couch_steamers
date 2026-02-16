@@ -11,21 +11,15 @@ $dark_color: #18272c;
 $white_color: #fff;
 $light_color: #e8eaed;
 
-:root {
-    --section_indent: #{rem(100px)};
-}
-
 $container_width: #{rem(1232px)};
 $container_pdd: #{rem(16px)};
 
-@include media('desktop') {
+:root {
+    --section_indent: #{rem(80px)};
 }
 
-@include media('tablet') {
-}
-
-@include media('mobile') {
+@include media('tablet_above') {
     :root {
-        --section_indent: #{rem(80px)};
+        --section_indent: #{rem(100px)};
     }
 }

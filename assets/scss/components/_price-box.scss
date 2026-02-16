@@ -24,21 +24,18 @@
     }
 
     &__info {
-        padding-inline: rem(20px);
         display: flex;
         align-items: center;
         justify-content: space-between;
-        gap: rem(10px);
         flex: 1;
-        @include media('desktop') {
-            padding: 0;
-        }
-        @include media('tablet') {
-            flex-direction: column;
-            align-items: flex-start;
-        }
-        @include media('mobile') {
-            gap: rem(20px);
+        flex-direction: column;
+        align-items: flex-start;
+        gap: rem(20px);
+
+        @include media('laptop_above') {
+            padding-inline: rem(20px);
+            gap: rem(10px);
+            flex-direction: row;
         }
     }
 
@@ -50,9 +47,7 @@
 
     &__name {
         font: 600 #{rem(20px)} / 130% $ff_base;
-        @include media('mobile') {
-            text-align: left;
-        }
+        text-align: left;
     }
 
     &__prices {
@@ -79,11 +74,11 @@
         text-transform: uppercase;
         border-radius: rem(8px);
         border: 1px solid $dark_color;
-        padding: rem(11px) rem(17px);
+        padding: rem(10px) rem(15px);
         margin-top: auto;
         @include transitions(0.5s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
-        @include media('mobile') {
-            padding: rem(10px) rem(15px);
+        @include media('tablet_above') {
+            padding: rem(11px) rem(17px);
         }
     }
 }

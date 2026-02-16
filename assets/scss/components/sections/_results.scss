@@ -3,28 +3,27 @@
 @use '../../base/var' as *;
 
 .results {
-    padding-block: var(--section_indent) rem(120px);
-    @include media('mobile') {
-        padding-block: var(--section_indent);
+    padding-block: var(--section_indent);
+    @include media('tablet_above') {
+        padding-block: var(--section_indent) rem(120px);
     }
 
     .section-info {
-        margin-bottom: rem(80px);
-
-        @include media('mobile') {
-            margin-bottom: rem(40px);
+        margin-bottom: rem(40px);
+        @include media('tablet_above') {
+            margin-bottom: rem(80px);
         }
     }
 
     &__cards {
-        margin-bottom: rem(80px);
         display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: rem(40px);
-        @include media('mobile') {
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: rem(20px) rem(10px);
-            margin-bottom: rem(40px);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: rem(20px) rem(10px);
+        margin-bottom: rem(40px);
+        @include media('tablet_above') {
+            margin-bottom: rem(80px);
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: rem(40px);
         }
     }
 
@@ -32,12 +31,12 @@
         display: flex;
         flex-direction: column;
         gap: rem(4px);
-        padding: rem(19px);
-        border: 1px solid #cfd4da;
+        border: none;
+        padding: 0;
 
-        @include media('mobile') {
-            border: none;
-            padding: 0;
+        @include media('tablet_above') {
+            padding: rem(19px);
+            border: 1px solid #cfd4da;
         }
     }
 
@@ -52,21 +51,21 @@
     }
 
     &__text {
-        font: 400 #{rem(16px)} / 130% $ff_base;
+        font: 400 #{rem(12px)} / 130% $ff_base;
         text-transform: uppercase;
         margin-top: auto;
-        @include media('mobile') {
-            font-size: rem(12px);
+        @include media('tablet_above') {
+            font-size: rem(16px);
         }
     }
 
     &__controls {
         display: flex;
-        gap: rem(8px);
         justify-content: center;
-        @include media('mobile') {
-            flex-direction: column;
-            gap: rem(8px);
+        flex-direction: column;
+        gap: rem(8px);
+        @include media('tablet_above') {
+            flex-direction: row;
         }
     }
 }

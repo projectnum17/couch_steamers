@@ -18,13 +18,11 @@
 
     &__pic {
         aspect-ratio: 314 / 200;
-        // flex: 1;
-        // height: 100%;
         overflow: hidden;
-        margin-bottom: rem(20px);
+        margin-bottom: rem(12px);
         width: 100%;
-        @include media('mobile') {
-            margin-bottom: rem(12px);
+        @include media('tablet_above') {
+            margin-bottom: rem(20px);
         }
 
         img {
@@ -42,30 +40,31 @@
         text-transform: uppercase;
         width: max-content;
         border-radius: rem(5px);
-        font: 600 #{rem(12px)} / 130% $ff_base;
+        font: 600 #{rem(10px)} / 130% $ff_base;
         padding: rem(2px) rem(8px);
         margin-bottom: rem(4px);
         background: $color_accent;
-        @include media('mobile') {
-            font-size: rem(10px);
+        @include media('tablet_above') {
+            font-size: rem(12px);
         }
     }
 
     &__title {
-        font: 400 #{rem(24px)} / 130% $ff_base;
-        margin-bottom: rem(20px);
-        @include media('mobile') {
-            font-size: rem(16px);
-            margin-bottom: rem(12px);
+        font: 400 #{rem(16px)} / 130% $ff_base;
+        margin-bottom: rem(12px);
+        @include media('tablet_above') {
+            font-size: rem(24px);
+            margin-bottom: rem(20px);
         }
     }
 
     &__descr {
-        font: 400 #{rem(16px)} / 130% $ff_base;
-        margin-bottom: rem(20px);
-        @include media('mobile') {
-            font-size: rem(12px);
-            margin-bottom: rem(12px);
+        font: 400 #{rem(12px)} / 130% $ff_base;
+        margin-bottom: rem(12px);
+
+        @include media('tablet_above') {
+            font-size: rem(16px);
+            margin-bottom: rem(20px);
         }
     }
 
@@ -75,12 +74,12 @@
         margin-top: auto;
         text-transform: uppercase;
         font: 400 #{rem(14px)} / 100% $ff_base;
-        padding: rem(12px) rem(17px);
+        padding: rem(10px) rem(12px);
         border-radius: rem(8px);
         border: 1px solid $dark_color;
         @include transitions(0.5s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
-        @include media('mobile') {
-            padding: rem(10px) rem(12px);
+        @include media('tablet_above') {
+            padding: rem(12px) rem(17px);
         }
     }
 }

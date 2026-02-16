@@ -7,20 +7,19 @@
     min-height: 100vh;
     min-height: 100svh;
     position: relative;
-    @include media('mobile') {
-        overflow: hidden;
-    }
+    overflow: hidden;
 
     &__content {
-        padding-block: rem(60px);
-        max-width: rem(602px);
-        @include media('mobile') {
-            padding-block: rem(12px);
-            max-width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
+        padding-block: rem(12px);
+        max-width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+
+        @include media('tablet_above') {
+            padding-block: rem(60px);
+            max-width: rem(602px);
         }
     }
 
@@ -29,20 +28,25 @@
         flex-direction: column;
         gap: rem(8px);
         margin-bottom: rem(60px);
-        @include media('mobile') {
-            margin-top: rem(70px);
-            margin-bottom: rem(37px);
-            padding-inline: $container_pdd;
+
+        margin-top: rem(70px);
+        margin-bottom: rem(37px);
+        padding-inline: $container_pdd;
+
+        @include media('tablet_above') {
+            margin-bottom: rem(60px);
+            padding: 0;
+            margin-top: 0;
         }
 
         li {
-            font: 400 #{rem(16px)} / 130% $ff_base;
+            font: 400 #{rem(14px)} / 130% $ff_base;
             text-transform: uppercase;
             display: inline-flex;
             align-items: center;
             gap: rem(4px);
-            @include media('mobile') {
-                font-size: rem(14px);
+            @include media('tablet_above') {
+                font-size: rem(16px);
             }
 
             &::before {
@@ -60,18 +64,19 @@
     &__controls {
         display: flex;
         gap: rem(8px);
-        @include media('mobile') {
-            padding-inline: $container_pdd;
+        padding-inline: $container_pdd;
+        @include media('tablet_above') {
+            padding: 0;
         }
     }
 
     &__customers {
-        display: flex;
-        align-items: center;
-        gap: rem(15px);
-        padding-top: rem(60px);
-        @include media('mobile') {
-            display: none;
+        display: none;
+        @include media('tablet_above') {
+            display: flex;
+            align-items: center;
+            gap: rem(15px);
+            padding-top: rem(60px);
         }
 
         &-pics {
@@ -124,24 +129,24 @@
     }
 
     &__logo {
-        display: none;
-        @include media('mobile') {
-            display: block;
-            padding-top: rem(70px);
-            max-width: rem(173px);
-            margin: 0 auto;
-            flex: 1;
-            img {
-                width: 100%;
-            }
+        display: block;
+        padding-top: rem(70px);
+        max-width: rem(173px);
+        margin: 0 auto;
+        flex: 1;
+        img {
+            width: 100%;
+        }
+        @include media('tablet_above') {
+            display: none;
         }
     }
 
     &__chev {
-        display: none;
-        @include media('mobile') {
-            display: flex;
-            flex-direction: column;
+        display: flex;
+        flex-direction: column;
+        @include media('tablet_above') {
+            display: none;
         }
     }
 
@@ -175,9 +180,10 @@
     }
 
     .main-title {
-        margin-bottom: rem(20px);
-        @include media('mobile') {
-            display: none;
+        display: none;
+        @include media('tablet_above') {
+            display: block;
+            margin-bottom: rem(20px);
         }
     }
 
@@ -187,27 +193,36 @@
         justify-content: flex-end;
         position: relative;
         z-index: 2;
-        @include media('mobile') {
-            padding: 0;
+        padding: 0;
+        @include media('tablet_above') {
+            padding-inline: $container_pdd;
         }
     }
 
     .cta {
-        @include media('mobile') {
-            flex: 1;
-            padding-inline: rem(5px);
+        flex: 1;
+        padding-inline: rem(5px);
+        @include media('tablet_above') {
+            flex: initial;
+            padding: rem(15px) rem(26px);
         }
     }
 
     .action-call {
-        @include media('mobile') {
-            padding: 0;
-            width: rem(52px);
-            height: rem(52px);
-            align-items: center;
-            justify-content: center;
+        padding: 0;
+        width: rem(52px);
+        height: rem(52px);
+        align-items: center;
+        justify-content: center;
+        span {
+            display: none;
+        }
+        @include media('tablet_above') {
+            width: auto;
+            height: auto;
+            padding: rem(13px) rem(23px);
             span {
-                display: none;
+                display: block;
             }
         }
     }

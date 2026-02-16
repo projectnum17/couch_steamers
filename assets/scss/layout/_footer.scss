@@ -4,21 +4,22 @@
 
 .footer {
     overflow: hidden;
-    padding-block: rem(50px) rem(40px);
+    padding-block: rem(60px) rem(40px);
     background: $dark_color;
     color: $light_color;
 
-    @include media('mobile') {
-        padding-block: rem(60px) rem(40px);
+    @include media('tablet_above') {
+        padding-block: rem(50px) rem(40px);
     }
 
     &__panel {
         display: flex;
         justify-content: space-between;
-        gap: rem(20px);
-        @include media('tablet') {
-            flex-direction: column;
-            gap: rem(60px);
+        flex-direction: column;
+        gap: rem(60px);
+        @include media('laptop_above') {
+            gap: rem(20px);
+            flex-direction: row;
         }
     }
 
@@ -29,9 +30,9 @@
     }
 
     &__logo {
-        max-width: rem(126px);
-        @include media('mobile') {
-            max-width: rem(116px);
+        max-width: rem(116px);
+        @include media('tablet_above') {
+            max-width: rem(126px);
         }
 
         img {
@@ -43,17 +44,13 @@
         display: flex;
         flex-direction: column;
         gap: rem(10px);
-        @include media('tablet') {
-            align-items: center;
-        }
+        align-items: center;
     }
 
     &__action {
-        @include media('mobile') {
-            display: flex;
-            align-items: center;
-            gap: rem(12px);
-        }
+        display: flex;
+        align-items: center;
+        gap: rem(12px);
     }
 
     &__socials {
@@ -63,27 +60,28 @@
         margin-top: auto;
 
         &.mobile--visible {
-            display: none;
-            @include media('mobile') {
-                display: flex;
-                margin-top: 0;
-                gap: rem(12px);
+            display: flex;
+            margin-top: 0;
+            gap: rem(12px);
+            @include media('tablet_above') {
+                display: none;
             }
         }
         &.mobile--hidden {
-            @include media('mobile') {
-                display: none;
+            display: none;
+            @include media('tablet_above') {
+                display: flex;
             }
         }
 
         li {
             display: inline-flex;
             flex-shrink: 0;
-            width: rem(55px);
-            height: rem(55px);
-            @include media('mobile') {
-                width: rem(40px);
-                height: rem(40px);
+            width: rem(40px);
+            height: rem(40px);
+            @include media('tablet_above') {
+                width: rem(55px);
+                height: rem(55px);
             }
         }
 
@@ -111,13 +109,6 @@
         display: flex;
         flex-direction: column;
         gap: rem(20px);
-        @include media('tablet') {
-            flex-direction: row;
-            justify-content: center;
-        }
-        @include media('mobile') {
-            flex-direction: column;
-        }
 
         li {
             display: inline-flex;
@@ -153,16 +144,17 @@
     }
 
     &__nav {
-        max-width: rem(356px);
         width: 100%;
+        max-width: rem(700px);
+        margin: 0 auto;
         display: flex;
-        align-items: flex-start;
-        justify-content: space-between;
         gap: rem(20px);
-        @include media('tablet') {
-            width: 100%;
-            max-width: rem(700px);
-            margin: 0 auto;
+        justify-content: space-between;
+
+        @include media('tablet_above') {
+            max-width: rem(356px);
+            align-items: flex-start;
+            justify-content: space-between;
         }
     }
 
@@ -223,21 +215,19 @@
         height: rem(75px);
         position: absolute;
         top: rem(0px);
-        right: rem(0px);
+        right: rem(30px);
         transform: translate(25%, -25%);
-        @include media('mobile') {
-            right: rem(30px);
+        @include media('tablet_above') {
+            right: rem(0px);
         }
     }
 
     .cta {
         width: 100%;
         color: $color_text;
-        @include media('mobile') {
-            padding: rem(6px) rem(12px);
-            border-radius: rem(8px);
-            text-align: center;
-        }
+        padding: rem(6px) rem(12px);
+        border-radius: rem(8px);
+        text-align: center;
     }
 
     .container {

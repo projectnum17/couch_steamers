@@ -3,28 +3,29 @@
 @use '../../base/var' as *;
 
 .blog {
-    padding-block: rem(170px) rem(120px);
+    padding-block: rem(100px) var(--section_indent);
 
-    @include media('mobile') {
-        padding-block: rem(100px) var(--section_indent);
+    @include media('tablet_above') {
+        padding-block: rem(170px) rem(120px);
     }
 
     &__cards {
         display: grid;
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-        gap: rem(40px) rem(30px);
-        margin-bottom: rem(80px);
-        @include media('mobile') {
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: rem(40px) rem(20px);
-            margin-bottom: rem(40px);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: rem(40px) rem(20px);
+        margin-bottom: rem(40px);
+
+        @include media('tablet_above') {
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: rem(40px) rem(30px);
+            margin-bottom: rem(80px);
         }
     }
 
     .section-info {
-        margin-bottom: rem(80px);
-        @include media('mobile') {
-            margin-bottom: rem(40px);
+        margin-bottom: rem(40px);
+        @include media('tablet_above') {
+            margin-bottom: rem(80px);
         }
     }
 
@@ -35,12 +36,12 @@
     .cta {
         justify-content: center;
         margin: 0 auto;
-        padding: rem(16px);
+        padding: rem(12px);
         min-width: rem(159px);
         border-radius: rem(8px);
 
-        @include media('mobile') {
-            padding: rem(12px);
+        @include media('tablet_above') {
+            padding: rem(16px);
         }
     }
 }

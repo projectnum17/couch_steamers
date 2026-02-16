@@ -3,11 +3,12 @@
 @use '../../base/var' as *;
 
 .action {
-    padding-block: var(--section_indent);
+    padding-block: rem(60px);
     background: $color_accent;
     overflow: hidden;
-    @include media('mobile') {
-        padding-block: rem(60px);
+
+    @include media('tablet_above') {
+        padding-block: var(--section_indent);
     }
 
     &__content {
@@ -15,41 +16,46 @@
         flex-direction: column;
         text-align: center;
         align-items: center;
-        gap: rem(20px);
+        gap: rem(12px);
         max-width: rem(806px);
         margin: 0 auto;
-        @include media('mobile') {
-            gap: rem(12px);
+        @include media('tablet_above') {
+            gap: rem(20px);
         }
     }
 
     &__subtitle {
-        font: 400 #{rem(24px)} / 130% $ff_base;
-        @include media('mobile') {
-            font-size: rem(20px);
+        font: 400 #{rem(20px)} / 130% $ff_base;
+        @include media('tablet_above') {
+            font-size: rem(24px);
         }
     }
 
     &__deco {
-        display: none;
-        @include media('mobile') {
-            display: block;
-            width: rem(80px);
+        display: block;
+        width: rem(80px);
+        @include media('tablet_above') {
+            display: none;
         }
     }
 
     &__controls {
         z-index: 2;
         display: flex;
+        flex-direction: column;
+        max-width: rem(258px);
+        width: 100%;
         position: relative;
         gap: rem(8px);
-        @include media('mobile') {
-            flex-direction: column;
-            max-width: rem(258px);
-            width: 100%;
+        @include media('tablet_above') {
+            flex-direction: row;
+            max-width: 100%;
+            width: max-content;
+            justify-content: center;
         }
 
         &::after {
+            display: none;
             content: '';
             z-index: -1;
             position: absolute;
@@ -61,8 +67,9 @@
             height: rem(104px);
             background: url('../imgs/ico/stars.svg') no-repeat center center /
                 cover;
-            @include media('mobile') {
-                display: none;
+
+            @include media('tablet_above') {
+                display: inline-flex;
             }
         }
     }
@@ -70,19 +77,19 @@
     .container {
         display: flex;
         flex-direction: column;
-        gap: rem(60px);
+        gap: rem(40px);
         align-items: center;
-        @include media('mobile') {
-            gap: rem(40px);
+        @include media('tablet_above') {
+            gap: rem(60px);
         }
     }
 
     .main-title {
-        font-size: rem(52px);
-        line-height: 42px;
-         @include media('mobile') {
-            font-size: rem(40px);
-            line-height: 130%;
+        font-size: rem(40px);
+        line-height: 130%;
+        @include media('tablet_above') {
+            font-size: rem(52px);
+            line-height: 42px;
         }
     }
 }

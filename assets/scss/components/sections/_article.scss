@@ -3,35 +3,36 @@
 @use '../../base/var' as *;
 
 .article {
-    padding-block: rem(160px) rem(120px);
-    @include media('mobile') {
-        padding-block: rem(100px) var(--section_indent);
+    padding-block: rem(100px) var(--section_indent);
+    @include media('tablet_above') {
+        padding-block: rem(160px) rem(120px);
     }
 
     .section-info {
         flex-direction: column-reverse;
-        margin-bottom: rem(80px);
-        @include media('mobile') {
-            margin-bottom: rem(40px);
+        margin-bottom: rem(40px);
+        @include media('tablet_above') {
+            margin-bottom: rem(80px);
         }
     }
 
     .content {
         img {
             width: 100%;
-            margin-bottom: rem(40px);
-            @include media('mobile') {
-                margin-bottom: rem(24px);
+            margin-bottom: rem(24px);
+
+            @include media('tablet_above') {
+                margin-bottom: rem(40px);
             }
         }
 
         p {
-            font: 300 #{rem(24px)} / 130% $ff_base;
-            margin-bottom: rem(24px);
+            font: 300 #{rem(18px)} / 130% $ff_base;
+            margin-bottom: rem(15px);
 
-            @include media('mobile') {
-                font-size: rem(18px);
-                margin-bottom: rem(15px);
+            @include media('tablet_above') {
+                font-size: rem(24px);
+                margin-bottom: rem(24px);
             }
 
             span {
@@ -63,12 +64,12 @@
             margin: 0 0 rem(24px) 0;
 
             li {
-                font: 300 #{rem(24px)} / 130% $ff_base;
+                font: 300 #{rem(18px)} / 130% $ff_base;
                 list-style-type: none;
                 position: relative;
 
-                @include media('mobile') {
-                    font-size: rem(18px);
+                @include media('tablet_above') {
+                    font-size: rem(24px);
                 }
 
                 span {
@@ -91,58 +92,58 @@
         }
 
         h1 {
-            font: 400 #{rem(46px)} / 130% $ff_accent;
+            font: 400 #{rem(28px)} / 130% $ff_accent;
             letter-spacing: 2px;
-            margin: 0 0 rem(24px) 0;
-            @include media('mobile') {
-                font-size: rem(28px);
-                margin: 0 0 rem(15px) 0;
+            margin: 0 0 rem(15px) 0;
+            @include media('tablet_above') {
+                font-size: rem(46px);
+                margin: 0 0 rem(24px) 0;
             }
         }
 
         h2 {
-            font: 400 #{rem(40px)} / 130% $ff_accent;
+            font: 400 #{rem(24px)} / 130% $ff_accent;
             letter-spacing: 2px;
-            margin: 0 0 rem(24px) 0;
+            margin: 0 0 rem(16px) 0;
 
-            @include media('mobile') {
-                font-size: rem(24px);
-                margin: 0 0 rem(15px) 0;
+            @include media('tablet_above') {
+                font-size: rem(40px);
+                margin: 0 0 rem(24px) 0;
             }
         }
 
         h3 {
-            font: 400 #{rem(34px)} / 130% $ff_accent;
-            margin: 0 0 rem(24px) 0;
+            font: 400 #{rem(22px)} / 130% $ff_accent;
+            margin: 0 0 rem(15px) 0;
 
-            @include media('mobile') {
-                font-size: rem(22px);
-                margin: 0 0 rem(15px) 0;
+            @include media('tablet_above') {
+                font-size: rem(34px);
+                margin: 0 0 rem(24px) 0;
             }
         }
 
         h4 {
-            font: 400 #{rem(28px)} / 130% $ff_accent;
-            margin: 0 0 rem(24px) 0;
-            @include media('mobile') {
-                font-size: rem(20px);
-                margin: 0 0 rem(15px) 0;
+            font: 400 #{rem(20px)} / 130% $ff_accent;
+            margin: 0 0 rem(15px) 0;
+            @include media('tablet_above') {
+                font-size: rem(28px);
+                margin: 0 0 rem(24px) 0;
             }
         }
         h5 {
-            font: 400 #{rem(26px)} / 130% $ff_accent;
-            margin: 0 0 rem(24px) 0;
-            @include media('mobile') {
-                font-size: rem(18px);
-                margin: 0 0 rem(15px) 0;
+            font: 400 #{rem(18px)} / 130% $ff_accent;
+            margin: 0 0 rem(15px) 0;
+            @include media('tablet_above') {
+                font-size: rem(26px);
+                margin: 0 0 rem(24px) 0;
             }
         }
         h6 {
-            font: 400 #{rem(24px)} / 130% $ff_accent;
-            margin: 0 0 rem(24px) 0;
-            @include media('mobile') {
-                font-size: rem(18px);
-                margin: 0 0 rem(15px) 0;
+            font: 400 #{rem(18px)} / 130% $ff_accent;
+            margin: 0 0 rem(15px) 0;
+            @include media('tablet_above') {
+                font-size: rem(24px);
+                margin: 0 0 rem(24px) 0;
             }
         }
     }

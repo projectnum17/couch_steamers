@@ -3,13 +3,12 @@
 @use '../../base/var' as *;
 
 .main-title {
-    font: 400 #{rem(60px)} / 130% $ff_accent;
-    @include media('tablet') {
+    font: 400 #{rem(40px)} / 130% $ff_accent;
+
+    @include media('tablet_above') {
         font-size: rem(50px);
     }
-
-    @include media('mobile') {
-        font-size: rem(40px);
-        line-height: 100%;
+    @include media('laptop_above') {
+        font-size: rem(60px);
     }
 }
