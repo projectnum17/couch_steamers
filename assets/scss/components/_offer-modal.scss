@@ -24,6 +24,14 @@
         scrollbar-width: none;
 
         -ms-overflow-style: none;
+        @include media('tablet') {
+            max-width: 95%;
+            padding: rem(40px) rem(24px) rem(24px);
+        }
+
+        @include media('mobile') {
+            padding: 0;
+        }
     }
 
     &__close {
@@ -35,6 +43,12 @@
         @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
         @include hover {
             transform: rotate(90deg);
+        }
+        @include media('mobile') {
+            width: rem(18px);
+            height: rem(18px);
+            top: rem(16px);
+            right: rem(16px);
         }
 
         svg {
@@ -48,6 +62,9 @@
         gap: rem(20px);
         justify-content: space-between;
         width: 100%;
+        @include media('mobile') {
+            flex-direction: column;
+        }
     }
 
     &__about {
@@ -55,6 +72,10 @@
         width: 100%;
         display: flex;
         flex-direction: column;
+        @include media('mobile') {
+            max-width: 100%;
+            padding: rem(0px) rem(24px) rem(24px);
+        }
     }
 
     &__pics {
@@ -64,16 +85,40 @@
         flex-direction: column;
         gap: rem(4px);
 
+        @include media('mobile') {
+            overflow: auto;
+            max-width: 100%;
+            margin: 0 auto;
+            flex-direction: row;
+            &::-webkit-scrollbar {
+                display: none;
+            }
+
+            scrollbar-width: none;
+
+            -ms-overflow-style: none;
+        }
+
         img {
             width: 100%;
+            @include media('mobile') {
+                max-width: rem(300px);
+            }
         }
     }
 
     &__text {
         font: 300 #{rem(20px)} / 160% $ff_base;
 
+        @include media('mobile') {
+            font-size: rem(14px);
+        }
+
         &:not(:last-of-type) {
             margin-bottom: rem(24px);
+            @include media('mobile') {
+                margin-bottom: rem(12px);
+            }
         }
     }
 
@@ -81,10 +126,17 @@
         line-height: 110%;
         text-align: center;
         margin-bottom: rem(60px);
+        @include media('mobile') {
+            margin-bottom: rem(24px);
+            padding: rem(40px) rem(24px) 0 rem(24px);
+        }
     }
 
     .cta {
         margin-top: auto;
         justify-content: center;
+        @include media('mobile') {
+            margin-top: rem(12px);
+        }
     }
 }

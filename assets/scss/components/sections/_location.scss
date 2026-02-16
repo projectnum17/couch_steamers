@@ -8,6 +8,9 @@
 
     &__map {
         max-width: rem(600px);
+        @include media('mobile') {
+            max-width: rem(350px);
+        }
 
         img {
             width: 100%;
@@ -20,16 +23,31 @@
         width: 100%;
         display: flex;
         flex-direction: column;
+        @include media('tablet') {
+            padding-top: 0;
+        }
+        @include media('mobile') {
+            padding-top: 0;
+        }
     }
 
     &__list {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: rem(32px) rem(40px);
+        @include media('mobile') {
+            display: block;
+            columns: 3;
+            gap: rem(16px);
+        }
 
         li {
             text-align: center;
             font: 400 #{20px} / 130% $ff_base;
+            @include media('mobile') {
+                font-size: rem(14px);
+                margin-bottom: rem(16px);
+            }
         }
     }
 
@@ -37,6 +55,15 @@
         align-self: flex-end;
         margin-right: rem(-150px);
         max-width: rem(299px);
+
+        @include media('mobile') {
+            position: absolute;
+            margin-right: 0;
+            max-width: rem(120px);
+            bottom: 0;
+            right: rem(29px);
+            transform: translateY(50%);
+        }
         img {
             width: 100%;
         }
@@ -53,5 +80,12 @@
         align-items: center;
         justify-content: space-between;
         gap: rem(40px);
+        @include media('tablet') {
+            flex-direction: column-reverse;
+        }
+        @include media('mobile') {
+            position: relative;
+            gap: rem(20px);
+        }
     }
 }

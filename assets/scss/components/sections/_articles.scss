@@ -13,4 +13,65 @@
     &__slide {
         height: auto;
     }
+
+    &__head {
+        max-width: rem(629px);
+        padding-bottom: rem(20px);
+        margin: 0 auto var(--section_indent);
+        @include media('mobile') {
+            margin-bottom: rem(60px);
+            padding-bottom: rem(10px);
+        }
+    }
+    &__info {
+        max-width: rem(515px);
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: rem(15px);
+        @include media('mobile') {
+            align-items: flex-start;
+        }
+
+        p {
+            font: 600 #{rem(20px)} / 21px $ff_base;
+            margin: 0;
+            color: #000;
+            @include media('mobile') {
+                font-size: rem(16px);
+            }
+        }
+        a,
+        span {
+            font: 400 #{rem(20px)} / 21px $ff_base;
+            @include media('mobile') {
+                font-size: rem(16px);
+            }
+        }
+
+        span {
+            display: inline-flex;
+        }
+
+        li {
+            display: flex;
+            align-items: center;
+            gap: rem(5px);
+            @include media('mobile') {
+                align-items: flex-start;
+            }
+        }
+    }
+    &__title {
+        font: 400 #{rem(48px)} / 42px $ff_accent;
+        text-align: center;
+        margin-bottom: rem(30px);
+        color: #000;
+        @include media('mobile') {
+            font-size: rem(38px);
+            margin-bottom: rem(20px);
+            text-align: left;
+        }
+    }
 }

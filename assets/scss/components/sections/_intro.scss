@@ -70,6 +70,9 @@
         align-items: center;
         gap: rem(15px);
         padding-top: rem(60px);
+        @include media('mobile') {
+            display: none;
+        }
 
         &-pics {
             display: flex;

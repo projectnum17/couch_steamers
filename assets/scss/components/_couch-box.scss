@@ -35,11 +35,15 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        flex: 1;
         gap: rem(12px);
     }
 
     &__name {
         font: 600 #{rem(20px)} / 130% $ff_base;
+        @include media('mobile') {
+            font-size: rem(18px);
+        }
     }
 
     &__cta {
@@ -52,6 +56,7 @@
         padding: rem(9px) rem(15px);
         border-radius: rem(8px);
         border: 1px solid $dark_color;
+        margin-top: auto;
         @include transitions(0.5s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
     }
 }
