@@ -1,6 +1,60 @@
 'use strict';
 
 document.addEventListener('DOMContentLoaded', () => {
+    const animationHandler = () => {
+        const animatedItems = document.querySelectorAll('.js-scroll');
+
+        if (!animatedItems.length) return;
+
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        const el = entry.target;
+                        el.classList.add('_animated');
+
+                        el.addEventListener(
+                            'transitionend',
+                            () => {
+                                if (el.classList.contains('_animated')) {
+                                    el.style.transform = 'none';
+                                    el.style.willChange = 'auto';
+                                }
+                            },
+                            { once: true },
+                        );
+
+                        observer.unobserve(el);
+                    }
+                });
+            },
+            { threshold: 0.05 },
+        );
+
+        animatedItems.forEach((item) => observer.observe(item));
+    };
+    // const animationHandler = () => {
+    //     const animatedItems = document.querySelectorAll('.js-scroll');
+
+    //     if (!animatedItems.length) return;
+
+    //     const observer = new IntersectionObserver(
+    //         (entries, observer) => {
+    //             entries.forEach((entry) => {
+    //                 if (entry.isIntersecting) {
+    //                     entry.target.classList.add('_animated');
+    //                     observer.unobserve(entry.target);
+    //                 }
+    //             });
+    //         },
+    //         {
+    //             threshold: 0,
+    //         },
+    //     );
+
+    //     animatedItems.forEach((item) => observer.observe(item));
+    // };
+
     const headerScrolledHandler = () => {
         const header = document.querySelector('.js-header');
         if (!header) return;
@@ -38,7 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
         burger.addEventListener('click', () => {
             burger.classList.toggle('is-active');
             mobileMenu.classList.toggle('is-active');
-            document.body.classList.toggle('is-locked')
+            document.body.classList.toggle('is-locked');
         });
     };
 
@@ -60,6 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
+    animationHandler();
     mobileMenuHandler();
     mobileSubMenuHandler();
     headerScrolledHandler();

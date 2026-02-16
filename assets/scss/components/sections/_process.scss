@@ -81,10 +81,12 @@
             width: 100%;
             padding: 0;
             border: none;
-
+            z-index: 5;
             position: relative;
             cursor: pointer;
+            isolation: isolate;
             @include hover {
+                z-index: 6;
                 background: $color_accent;
                 border-color: $color_accent;
 
@@ -99,11 +101,6 @@
                     top: 75%;
                 }
             }
-
-            @include transitions(
-                0.3s,
-                cubic-bezier(0.768, 0.304, 0.496, 0.884)
-            );
 
             &.is-open {
                 .process__about {
@@ -148,6 +145,7 @@
         width: 100%;
         background: transparent;
         border-radius: 0;
+        z-index: 2;
         padding-inline: rem(8px);
         background-color: $white_color;
         color: $dark_color;
