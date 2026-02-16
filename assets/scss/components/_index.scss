@@ -1,5 +1,6 @@
 @use './ui';
 @use './sections';
+@forward 'mobile-menu';
 @forward 'city-box';
 @forward 'faq-box';
 @forward 'article-box';

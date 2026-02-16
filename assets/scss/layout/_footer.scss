@@ -8,21 +8,31 @@
     background: $dark_color;
     color: $light_color;
 
+    @include media('mobile') {
+        padding-block: rem(60px) rem(40px);
+    }
+
     &__panel {
         display: flex;
         justify-content: space-between;
         gap: rem(20px);
+        @include media('tablet') {
+            flex-direction: column;
+            gap: rem(60px);
+        }
     }
 
     &__title {
         font: 600 #{rem(16px)} / 130% $ff_base;
         text-transform: uppercase;
         margin-bottom: rem(15px);
-        margin-bottom: rem(15px);
     }
 
     &__logo {
         max-width: rem(126px);
+        @include media('mobile') {
+            max-width: rem(116px);
+        }
 
         img {
             width: 100%;
@@ -33,6 +43,17 @@
         display: flex;
         flex-direction: column;
         gap: rem(10px);
+        @include media('tablet') {
+            align-items: center;
+        }
+    }
+
+    &__action {
+        @include media('mobile') {
+            display: flex;
+            align-items: center;
+            gap: rem(12px);
+        }
     }
 
     &__socials {
@@ -41,11 +62,29 @@
         gap: rem(20px);
         margin-top: auto;
 
+        &.mobile--visible {
+            display: none;
+            @include media('mobile') {
+                display: flex;
+                margin-top: 0;
+                gap: rem(12px);
+            }
+        }
+        &.mobile--hidden {
+            @include media('mobile') {
+                display: none;
+            }
+        }
+
         li {
             display: inline-flex;
             flex-shrink: 0;
             width: rem(55px);
             height: rem(55px);
+            @include media('mobile') {
+                width: rem(40px);
+                height: rem(40px);
+            }
         }
 
         a {
@@ -62,6 +101,7 @@
     }
 
     &__contacts {
+        position: relative;
         display: flex;
         flex-direction: column;
         gap: rem(40px);
@@ -71,6 +111,13 @@
         display: flex;
         flex-direction: column;
         gap: rem(20px);
+        @include media('tablet') {
+            flex-direction: row;
+            justify-content: center;
+        }
+        @include media('mobile') {
+            flex-direction: column;
+        }
 
         li {
             display: inline-flex;
@@ -112,6 +159,11 @@
         align-items: flex-start;
         justify-content: space-between;
         gap: rem(20px);
+        @include media('tablet') {
+            width: 100%;
+            max-width: rem(700px);
+            margin: 0 auto;
+        }
     }
 
     &__menu {
@@ -167,14 +219,25 @@
     }
 
     &__deco {
+        width: rem(75px);
+        height: rem(75px);
         position: absolute;
         top: rem(0px);
         right: rem(0px);
         transform: translate(25%, -25%);
+        @include media('mobile') {
+            right: rem(30px);
+        }
     }
 
     .cta {
+        width: 100%;
         color: $color_text;
+        @include media('mobile') {
+            padding: rem(6px) rem(12px);
+            border-radius: rem(8px);
+            text-align: center;
+        }
     }
 
     .container {

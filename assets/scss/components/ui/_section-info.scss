@@ -8,6 +8,10 @@
     text-align: center;
     gap: rem(20px);
 
+    @include media('mobile') {
+        gap: rem(12px);
+    }
+
     .main-title {
         font-family: $ff_accent_it;
     }
@@ -16,5 +20,8 @@
         font: 400 #{rem(24px)} / 130% $ff_base;
         text-transform: uppercase;
         color: rgba(24, 39, 44, 0.5);
+        @include media('mobile') {
+            font-size: rem(16px);
+        }
     }
 }

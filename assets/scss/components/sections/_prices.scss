@@ -3,7 +3,7 @@
 @use '../../base/var' as *;
 
 .prices {
-    padding-block: $section_indent;
+    padding-block: var(--section_indent);
 
     &__cards {
         display: grid;

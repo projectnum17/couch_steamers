@@ -17,11 +17,15 @@
     }
 
     &__pic {
-        flex: 1;
-        height: 100%;
+        aspect-ratio: 314 / 200;
+        // flex: 1;
+        // height: 100%;
         overflow: hidden;
         margin-bottom: rem(20px);
         width: 100%;
+        @include media('mobile') {
+            margin-bottom: rem(12px);
+        }
 
         img {
             height: 100%;
@@ -42,16 +46,27 @@
         padding: rem(2px) rem(8px);
         margin-bottom: rem(4px);
         background: $color_accent;
+        @include media('mobile') {
+            font-size: rem(10px);
+        }
     }
 
     &__title {
         font: 400 #{rem(24px)} / 130% $ff_base;
         margin-bottom: rem(20px);
+        @include media('mobile') {
+            font-size: rem(16px);
+            margin-bottom: rem(12px);
+        }
     }
 
     &__descr {
         font: 400 #{rem(16px)} / 130% $ff_base;
         margin-bottom: rem(20px);
+        @include media('mobile') {
+            font-size: rem(12px);
+            margin-bottom: rem(12px);
+        }
     }
 
     &__cta {
@@ -64,5 +79,8 @@
         border-radius: rem(8px);
         border: 1px solid $dark_color;
         @include transitions(0.5s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+        @include media('mobile') {
+            padding: rem(10px) rem(12px);
+        }
     }
 }

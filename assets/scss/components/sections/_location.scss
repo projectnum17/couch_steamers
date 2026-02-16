@@ -4,7 +4,7 @@
 
 .location {
     overflow: hidden;
-    padding-block: $section_indent;
+    padding-block: var(--section_indent);
 
     &__map {
         max-width: rem(600px);

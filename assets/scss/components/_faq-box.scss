@@ -9,6 +9,11 @@
     align-items: center;
     gap: rem(20px);
 
+    @include media('mobile') {
+        padding: 0;
+        padding-block: rem(20px);
+    }
+
     &:not(:last-child) {
         border-bottom: 1px solid #a4a4a4;
     }
@@ -37,6 +42,9 @@
     &__title {
         font: 500 #{rem(24px)} / 130% $ff_base;
         color: #000;
+        @include media('mobile') {
+            font-size: rem(20px);
+        }
     }
 
     &__head {
@@ -52,6 +60,9 @@
         p {
             font: 400 #{rem(20px)} / 130% $ff_base;
             overflow: hidden;
+            @include media('mobile') {
+                font-size: rem(16px);
+            }
             @include transitions(
                 0.5s,
                 cubic-bezier(0.768, 0.304, 0.496, 0.884)
@@ -64,6 +75,10 @@
         width: rem(32px);
         height: rem(32px);
         @include transitions(0.5s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+        @include media('mobile') {
+            width: rem(24px);
+            height: rem(24px);
+        }
         rect {
             fill: $color_accent;
             @include transitions(

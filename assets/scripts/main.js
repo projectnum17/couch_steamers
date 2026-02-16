@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const handleScroll = () => {
             const currentScroll = window.scrollY;
 
-            if (currentScroll > 10) {
+            if (currentScroll > 50) {
                 header.classList.add('is-scroll');
             } else {
                 header.classList.remove('is-scroll');
@@ -29,5 +29,38 @@ document.addEventListener('DOMContentLoaded', () => {
         window.addEventListener('scroll', handleScroll);
     };
 
+    const mobileMenuHandler = () => {
+        const burger = document.querySelector('.js-menu-trigger');
+        const mobileMenu = document.querySelector('.js-mob-menu');
+
+        if (!burger || !mobileMenu) return;
+
+        burger.addEventListener('click', () => {
+            burger.classList.toggle('is-active');
+            mobileMenu.classList.toggle('is-active');
+            document.body.classList.toggle('is-locked')
+        });
+    };
+
+    const mobileSubMenuHandler = () => {
+        const menuItems = document.querySelectorAll(
+            '.mobile-menu__routes > li',
+        );
+
+        menuItems.forEach((item) => {
+            const submenu = item.querySelector('.submenu');
+
+            if (submenu) {
+                item.addEventListener('click', (e) => {
+                    e.preventDefault();
+
+                    submenu.classList.toggle('is-active');
+                });
+            }
+        });
+    };
+
+    mobileMenuHandler();
+    mobileSubMenuHandler();
     headerScrolledHandler();
 });

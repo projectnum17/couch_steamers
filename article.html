@@ -51,6 +51,11 @@
                 <a href="tel:+19803046427" class="header__tel">+1 980 304 64 27</a>
                 <a href="javascript: void(0)" class="cta">Book Now</a>
             </div>
+            <button type="button" class="header__burger js-menu-trigger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </header>
     <main class="main">
@@ -143,7 +148,7 @@
                     <a href="javascript: void(0)" class="footer__logo">
                         <img decoding="async" loading="lazy" src="./assets/imgs/ico/logo_wht.svg" alt="Logo">
                     </a>
-                    <ul class="footer__socials">
+                    <ul class="footer__socials mobile--hidden">
                         <li>
                             <a href="https://www.facebook.com/" target="_blank">
                                 <img decoding="async" loading="lazy" width="55" height="55"
@@ -208,7 +213,26 @@
                             </a>
                         </li>
                     </ul>
-                    <a href="javascript: void(0)" class="cta cta--lg">Get a Free Quote Now</a>
+                    <div class="footer__action">
+                        <ul class="footer__socials mobile--visible">
+                            <li>
+                                <a href="https://www.facebook.com/" target="_blank">
+                                    <img decoding="async" loading="lazy" width="55" height="55"
+                                        src="./assets/imgs/ico/ico-facebok.svg" alt="Facebook">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.instagram.com/" target="_blank">
+                                    <img decoding="async" loading="lazy" width="55" height="55"
+                                        src="./assets/imgs/ico/ico-instagram.svg" alt="Instagram">
+                                </a>
+                            </li>
+                        </ul>
+                        <a href="javascript: void(0)" class="cta cta--lg">Get a Free Quote Now</a>
+                    </div>
+                    <div class="footer__deco">
+                        <img decoding="async" loading="lazy" src="./assets/imgs/ico/call-deco.svg" alt="">
+                    </div>
                 </div>
             </div>
             <div class="footer__lawer">
@@ -218,11 +242,69 @@
                 </ul>
                 <p class="footer__copy">© 2026 COUCH STEAMERS. All rights reserved</p>
             </div>
-            <div class="footer__deco">
-                <img decoding="async" loading="lazy" src="./assets/imgs/ico/call-deco.svg" alt="">
-            </div>
         </div>
     </footer>
+    <div class="mobile-menu js-mob-menu">
+        <div class="container">
+            <div class="mobile-menu__logo">
+                <img src="./assets/imgs/ico/logo.svg" alt="Logo">
+            </div>
+            <ul class="mobile-menu__routes">
+                <li>
+                    <a href="javascript: void(0)">About</a>
+                </li>
+                <li>
+                    <a href="javascript: void(0)">Services</a>
+                    <div class="submenu">
+                        <ul class="submenu__box">
+                            <li><a href="javascript: void(0)">Couch Cleaning</a></li>
+                            <li><a href="javascript: void(0)">Mattress Cleaning</a></li>
+                            <li><a href="javascript: void(0)">Chair Cleaning</a></li>
+                            <li><a href="javascript: void(0)">Rug Cleaning</a></li>
+                            <li><a href="javascript: void(0)">Curtain Cleaning</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <a href="javascript: void(0)">Reviews</a>
+                </li>
+                <li>
+                    <a href="javascript: void(0)">Blog</a>
+                </li>
+                <li>
+                    <a href="javascript: void(0)">FAQs</a>
+                </li>
+            </ul>
+            <ul class="mobile-menu__info">
+                <li>
+                    <img width="24" height="24" src="./assets/imgs/ico/ico-pin-lght.svg" alt="Icon">
+                    <p>Charlotte, NC</p>
+                </li>
+                <li>
+                    <a href="tel:+19803046427">
+                        <img src="./assets/imgs/ico/ico-call-lght.svg" alt="Icon">
+                        +1 980 304 64 27
+                    </a>
+                </li>
+                <li>
+                    <a href="mailto:support@couch-steamers.com">
+                        <img src="./assets/imgs/ico/ico-mess-lght.svg" alt="Icon">
+                        support@couch-steamers.com
+                    </a>
+                </li>
+            </ul>
+            <div class="mobile-menu__controls">
+                <a href="javascript: void(0)" class="cta">Get a Free Quote Now</a>
+                <a href="tel:+19803046427" class="mobile-menu__tel">
+                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M25.6667 19.74V23.24C25.668 23.5649 25.6014 23.8865 25.4713 24.1842C25.3411 24.4819 25.1502 24.7492 24.9108 24.9688C24.6713 25.1885 24.3887 25.3557 24.0809 25.4598C23.7731 25.5639 23.4469 25.6025 23.1233 25.5733C19.5333 25.1832 16.0848 23.9565 13.055 21.9916C10.2361 20.2004 7.84623 17.8105 6.055 14.9916C4.08331 11.948 2.85629 8.4828 2.47334 4.87664C2.44418 4.55402 2.48252 4.22886 2.58592 3.92187C2.68932 3.61487 2.8555 3.33277 3.0739 3.09353C3.29229 2.85428 3.55811 2.66313 3.85443 2.53225C4.15074 2.40136 4.47107 2.33361 4.795 2.3333H8.295C8.86119 2.32773 9.41009 2.52823 9.83939 2.89743C10.2687 3.26662 10.5491 3.77933 10.6283 4.33997C10.7761 5.46005 11.05 6.55982 11.445 7.6183C11.602 8.03588 11.6359 8.4897 11.5429 8.926C11.4498 9.36229 11.2337 9.76277 10.92 10.08L9.43834 11.5616C11.0992 14.4824 13.5175 16.9008 16.4383 18.5616L17.92 17.08C18.2372 16.7663 18.6377 16.5501 19.074 16.4571C19.5103 16.364 19.9641 16.398 20.3817 16.555C21.4402 16.9499 22.5399 17.2239 23.66 17.3716C24.2267 17.4516 24.7443 17.737 25.1143 18.1737C25.4843 18.6104 25.6809 19.1678 25.6667 19.74Z"
+                            fill="#18272C" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

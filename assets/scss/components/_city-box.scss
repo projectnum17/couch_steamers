@@ -9,6 +9,10 @@
     width: 100%;
     gap: rem(20px);
 
+    @include media('mobile') {
+        gap: rem(8px);
+    }
+
     @include hover {
         .city-box__pic img {
             transform: scale(1.15);
@@ -26,11 +30,17 @@
         justify-content: space-between;
         gap: rem(10px);
         padding-inline: rem(20px);
+        @include media('mobile') {
+            padding: 0;
+        }
     }
 
     &__pic {
         border-radius: rem(20px);
         overflow: hidden;
+        @include media('mobile') {
+            border-radius: rem(12px);
+        }
 
         img {
             width: 100%;
@@ -43,6 +53,9 @@
 
     &__title {
         font: 600 #{rem(20px)} / 130% $ff_base;
+        @include media('mobile') {
+            font-size: rem(16px);
+        }
     }
 
     &__deco {
@@ -53,5 +66,9 @@
         border-radius: rem(8px);
         border: 1px solid $dark_color;
         @include transitions(0.5s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+        @include media('mobile') {
+            font-size: rem(12px);
+            padding: rem(9px) rem(17px);
+        }
     }
 }

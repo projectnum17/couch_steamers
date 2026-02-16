@@ -4,7 +4,7 @@
 
 .articles {
     overflow: hidden;
-    padding-block: $section_indent;
+    padding-block: var(--section_indent);
 
     &__slider {
         overflow: visible;

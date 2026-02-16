@@ -11,6 +11,10 @@
     background: $color_accent;
     @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
 
+    @include media('mobile') {
+        border-radius: rem(8px);
+    }
+
     &:hover {
         background: #b8de0c;
     }
@@ -21,6 +25,10 @@
 
     &--lg {
         padding: rem(15px) rem(26px);
+        @include media('mobile') {
+            padding: rem(12px);
+            line-height: 120%;
+        }
     }
 
     &--drk {

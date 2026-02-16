@@ -3,7 +3,7 @@
 @use '../../base/var' as *;
 
 .couch {
-    padding-block: $section_indent;
+    padding-block: var(--section_indent);
     background: #e8eaed;
 
     &__cards {

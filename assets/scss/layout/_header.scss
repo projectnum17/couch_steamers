@@ -2,13 +2,49 @@
 @use '../base/mixins' as *;
 @use '../base/var' as *;
 
+body:has(section.intro) {
+    @include media('mobile') {
+        .header {
+            &__logo {
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+            }
+            &.is-scroll {
+                .header__logo {
+                    transform: translateY(0%);
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
+        }
+    }
+}
+
+body:has(.mobile-menu.is-active) {
+    .header {
+        &.is-scroll {
+            background: transparent;
+            backdrop-filter: blur(0px);
+            .header__logo {
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+    }
+}
+
 .header {
     position: fixed;
     top: 0;
     width: 100%;
-    z-index: 5;
+    z-index: 6;
     padding-block: rem(22px);
     @include transitions(0.5s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+    @include media('mobile') {
+        padding-block: rem(20px);
+    }
 
     &.is-transform {
         transform: translateY(-100%);
@@ -22,6 +58,10 @@
 
     &__logo {
         max-width: rem(126px);
+        @include transitions(0.5s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+        @include media('tablet') {
+            max-width: rem(90px);
+        }
 
         img {
             width: 100%;
@@ -32,10 +72,21 @@
         display: flex;
         align-items: center;
         gap: rem(18px);
+        @include media('tablet') {
+            gap: rem(12px);
+        }
+
+        @include media('mobile') {
+            display: none;
+        }
 
         li {
             font: 400 #{rem(16px)} / 130% $ff_base;
             text-transform: uppercase;
+
+            @include media('tablet') {
+                font-size: rem(14px);
+            }
 
             a {
                 font: inherit;
@@ -123,6 +174,9 @@
         display: flex;
         align-items: center;
         gap: rem(15px);
+        @include media('mobile') {
+            display: none;
+        }
     }
 
     &__tel {
@@ -130,6 +184,9 @@
         padding: rem(2px) rem(4px);
         border-radius: rem(4px);
         @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+        @include media('tablet') {
+            font-size: rem(14px);
+        }
 
         &:hover {
             background: rgba(191, 234, 0, 0.2);
@@ -137,6 +194,56 @@
 
         &:active {
             background: rgba(191, 234, 0, 0.4);
+        }
+    }
+
+    &__burger {
+        display: none;
+        position: relative;
+        width: rem(40px);
+        height: rem(40px);
+        @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+        @include media('mobile') {
+            display: inline-flex;
+        }
+
+        &.is-active {
+            span:nth-child(1) {
+                top: 50%;
+                transform: translate(-50%, -50%) rotateZ(-135deg);
+            }
+            span:nth-child(2) {
+                right: 50%;
+                width: 0;
+            }
+            span:nth-child(3) {
+                top: 50%;
+                transform: translate(-50%, -50%) rotateZ(135deg);
+            }
+        }
+
+        span {
+            position: absolute;
+            right: 0;
+            width: rem(28px);
+            height: 2px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+            background: #000;
+            transition: inherit;
+
+            &:nth-child(1) {
+                top: rem(12px);
+            }
+
+            &:nth-child(2) {
+                top: 48%;
+            }
+
+            &:nth-child(3) {
+                bottom: rem(12px);
+            }
         }
     }
 

@@ -9,10 +9,14 @@
     border-radius: rem(8px);
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: rem(8px);
     border: 1px solid $dark_color;
     background: transparent;
     @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+    @include media('mobile') {
+        padding: rem(11px);
+    }
 
     &:hover {
         background: #18272c1a;

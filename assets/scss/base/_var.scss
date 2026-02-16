@@ -11,7 +11,10 @@ $dark_color: #18272c;
 $white_color: #fff;
 $light_color: #e8eaed;
 
-$section_indent: #{rem(100px)};
+:root {
+    --section_indent: #{rem(100px)};
+}
+
 $container_width: #{rem(1232px)};
 $container_pdd: #{rem(16px)};
 
@@ -22,4 +25,7 @@ $container_pdd: #{rem(16px)};
 }
 
 @include media('mobile') {
+    :root {
+        --section_indent: #{rem(80px)};
+    }
 }

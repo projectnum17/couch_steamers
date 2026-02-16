@@ -3,10 +3,17 @@
 @use '../../base/var' as *;
 
 .results {
-    padding-block: $section_indent rem(120px);
+    padding-block: var(--section_indent) rem(120px);
+    @include media('mobile') {
+        padding-block: var(--section_indent);
+    }
 
     .section-info {
         margin-bottom: rem(80px);
+
+        @include media('mobile') {
+            margin-bottom: rem(40px);
+        }
     }
 
     &__cards {
@@ -14,6 +21,11 @@
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: rem(40px);
+        @include media('mobile') {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: rem(20px) rem(10px);
+            margin-bottom: rem(40px);
+        }
     }
 
     &__card {
@@ -22,6 +34,11 @@
         gap: rem(4px);
         padding: rem(19px);
         border: 1px solid #cfd4da;
+
+        @include media('mobile') {
+            border: none;
+            padding: 0;
+        }
     }
 
     &__pics {
@@ -37,11 +54,19 @@
     &__text {
         font: 400 #{rem(16px)} / 130% $ff_base;
         text-transform: uppercase;
+        margin-top: auto;
+        @include media('mobile') {
+            font-size: rem(12px);
+        }
     }
 
     &__controls {
         display: flex;
         gap: rem(8px);
         justify-content: center;
+        @include media('mobile') {
+            flex-direction: column;
+            gap: rem(8px);
+        }
     }
 }

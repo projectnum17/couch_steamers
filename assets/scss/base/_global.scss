@@ -44,11 +44,3 @@ a {
     width: 100%;
     margin: 0 auto;
 }
-
-.container--right {
-    padding-left: calc((100% - $container_width) / 2 + $container_pdd);
-}
-
-.container--left {
-    padding-right: calc((100% - $container_width) / 2 + $container_pdd);
-}

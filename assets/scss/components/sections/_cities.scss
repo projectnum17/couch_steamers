@@ -3,16 +3,23 @@
 @use '../../base/var' as *;
 
 .cities {
-    padding-block: $section_indent;
+    padding-block: var(--section_indent);
 
     .section-info {
         margin-bottom: rem(50px);
+        @include media('mobile') {
+            margin-bottom: rem(40px);
+        }
     }
 
     &__boxes {
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: rem(40px);
+        @include media('mobile') {
+            grid-template-columns: repeat(1, minmax(0, 1fr));
+            gap: rem(20px);
+        }
     }
 
     .city-box {
