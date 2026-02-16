@@ -103,6 +103,13 @@ body:has(.mobile-menu.is-active) {
 
             a {
                 font: inherit;
+                @include transitions(
+                    0.3s,
+                    cubic-bezier(0.768, 0.304, 0.496, 0.884)
+                );
+                @include hover {
+                    opacity: .7;
+                }
             }
 
             &:has(.submenu) {

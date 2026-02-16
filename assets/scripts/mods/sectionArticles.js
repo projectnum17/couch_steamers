@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
             slidesPerView: 3.5,
             spaceBetween: 30,
             speed: 700,
+            grabCursor: true,
             breakpoints: {
                 0: {
                     slidesPerView: 1.5,
