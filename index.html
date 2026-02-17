@@ -9,14 +9,18 @@
     <link rel="preload" href="./assets/fonts/ff_base_400.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="./assets/fonts/ff_accent_400.woff2" as="font" type="font/woff2" crossorigin>
 
+    <link rel="stylesheet" href="./assets/libs/fancybox/fancybox.min.css">
     <link rel="stylesheet" href="./assets/libs/swiper/swiper.min.css">
     <link rel="stylesheet" href="./assets/css/main.min.css">
 
+    <script defer src="./assets/libs/fancybox/fancybox.min.js"></script>
     <script defer src="./assets/libs/swiper/swiper.min.js"></script>
     <script defer src="./assets/scripts/mods/sectionFaq.js"></script>
     <script defer src="./assets/scripts/mods/sectionProcess.js"></script>
     <script defer src="./assets/scripts/mods/sectionArticles.js"></script>
     <script defer src="./assets/scripts/mods/sectionQuiz.js"></script>
+    <script defer src="./assets/scripts/mods/sectionGallery.js"></script>
+    <script defer src="./assets/scripts/mods/contactModal.js"></script>
     <script defer src="./assets/scripts/main.js"></script>
 </head>
 
@@ -119,48 +123,48 @@
                     <p class="section-info__title js-scroll">Our recent works</p>
                 </div>
                 <div class="results__cards">
-                    <div class="results__card js-scroll">
+                    <button type="button" class="results__card js-scroll js-contact-trigger">
                         <div class="results__pics">
                             <img src="./assets/imgs/r_1.jpg" alt="Picture">
                             <img src="./assets/imgs/r_1_1.jpg" alt="Picture">
                         </div>
                         <p class="results__text">pet hair removal</p>
-                    </div>
-                    <div class="results__card js-scroll">
+                    </button>
+                    <button type="button" class="results__card js-scroll js-contact-trigger">
                         <div class="results__pics">
                             <img src="./assets/imgs/r_2.jpg" alt="Picture">
                             <img src="./assets/imgs/r_2_2.jpg" alt="Picture">
                         </div>
                         <p class="results__text">drawing removal</p>
-                    </div>
-                    <div class="results__card js-scroll">
+                    </button>
+                    <button type="button" class="results__card js-scroll js-contact-trigger">
                         <div class="results__pics">
                             <img src="./assets/imgs/r_3.jpg" alt="Picture">
                             <img src="./assets/imgs/r_3_3.jpg" alt="Picture">
                         </div>
                         <p class="results__text">wine stain removal</p>
-                    </div>
-                    <div class="results__card js-scroll">
+                    </button>
+                    <button type="button" class="results__card js-scroll js-contact-trigger">
                         <div class="results__pics">
                             <img src="./assets/imgs/r_4.jpg" alt="Picture">
                             <img src="./assets/imgs/r_4_4.jpg" alt="Picture">
                         </div>
                         <p class="results__text">pet pee removal</p>
-                    </div>
-                    <div class="results__card js-scroll">
+                    </button>
+                    <button type="button" class="results__card js-scroll js-contact-trigger">
                         <div class="results__pics">
                             <img src="./assets/imgs/r_5.jpg" alt="Picture">
                             <img src="./assets/imgs/r_5_5.jpg" alt="Picture">
                         </div>
                         <p class="results__text">wet stain removal</p>
-                    </div>
-                    <div class="results__card js-scroll">
+                    </button>
+                    <button type="button" class="results__card js-scroll js-contact-trigger">
                         <div class="results__pics">
                             <img src="./assets/imgs/r_6.jpg" alt="Picture">
                             <img src="./assets/imgs/r_6_6.jpg" alt="Picture">
                         </div>
                         <p class="results__text">fabric renovation</p>
-                    </div>
+                    </button>
                 </div>
                 <div class="results__controls js-scroll">
                     <a href="javascript: void(0)" class="cta cta--lg">Get a Free Quote Now</a>
@@ -356,33 +360,51 @@
         <section class="gallery">
             <div class="container">
                 <div class="gallery__cards">
-                    <div class="gallery__card js-scroll">
-                        <img src="./assets/imgs/g_1.jpg" alt="Picture">
-                    </div>
-                    <div class="gallery__card js-scroll">
-                        <img src="./assets/imgs/g_2.jpg" alt="Picture">
-                    </div>
-                    <div class="gallery__card js-scroll">
-                        <img src="./assets/imgs/g_3.jpg" alt="Picture">
-                    </div>
-                    <div class="gallery__card js-scroll">
-                        <img src="./assets/imgs/g_4.jpg" alt="Picture">
-                    </div>
-                    <div class="gallery__card js-scroll">
-                        <img src="./assets/imgs/g_6.jpg" alt="Picture">
-                    </div>
-                    <div class="gallery__card js-scroll">
-                        <img src="./assets/imgs/g_5.jpg" alt="Picture">
-                    </div>
-                    <div class="gallery__card js-scroll">
-                        <img src="./assets/imgs/g_7.jpg" alt="Picture">
-                    </div>
-                    <div class="gallery__card js-scroll">
-                        <img src="./assets/imgs/g_8.jpg" alt="Picture">
-                    </div>
-                    <div class="gallery__card js-scroll">
-                        <img src="./assets/imgs/g_9.jpg" alt="Picture">
-                    </div>
+                    <a href="./assets/imgs/g_1.jpg" data-fancybox="gallery">
+                        <div class="gallery__card js-scroll">
+                            <img src="./assets/imgs/g_1.jpg" alt="Picture">
+                        </div>
+                    </a>
+                    <a href="./assets/imgs/g_2.jpg" data-fancybox="gallery">
+                        <div class="gallery__card js-scroll">
+                            <img src="./assets/imgs/g_2.jpg" alt="Picture">
+                        </div>
+                    </a>
+                    <a href="./assets/imgs/g_3.jpg" data-fancybox="gallery">
+                        <div class="gallery__card js-scroll">
+                            <img src="./assets/imgs/g_3.jpg" alt="Picture">
+                        </div>
+                    </a>
+                    <a href="./assets/imgs/g_4.jpg" data-fancybox="gallery">
+                        <div class="gallery__card js-scroll">
+                            <img src="./assets/imgs/g_4.jpg" alt="Picture">
+                        </div>
+                    </a>
+                    <a href="./assets/imgs/g_6.jpg" data-fancybox="gallery">
+                        <div class="gallery__card js-scroll">
+                            <img src="./assets/imgs/g_6.jpg" alt="Picture">
+                        </div>
+                    </a>
+                    <a href="./assets/imgs/g_5.jpg" data-fancybox="gallery">
+                        <div class="gallery__card js-scroll">
+                            <img src="./assets/imgs/g_5.jpg" alt="Picture">
+                        </div>
+                    </a>
+                    <a href="./assets/imgs/g_7.jpg" data-fancybox="gallery">
+                        <div class="gallery__card js-scroll">
+                            <img src="./assets/imgs/g_7.jpg" alt="Picture">
+                        </div>
+                    </a>
+                    <a href="./assets/imgs/g_8.jpg" data-fancybox="gallery">
+                        <div class="gallery__card js-scroll">
+                            <img src="./assets/imgs/g_8.jpg" alt="Picture">
+                        </div>
+                    </a>
+                    <a href="./assets/imgs/g_9.jpg" data-fancybox="gallery">
+                        <div class="gallery__card js-scroll">
+                            <img src="./assets/imgs/g_9.jpg" alt="Picture">
+                        </div>
+                    </a>
                 </div>
             </div>
         </section>
@@ -1056,6 +1078,43 @@
                             fill="#18272C" />
                     </svg>
                 </a>
+            </div>
+        </div>
+    </div>
+    <div class="contact-modal modal-overlay js-contact-modal">
+        <div class="container">
+            <div class="contact-modal__box js-contact-content">
+                <button type="button" class="contact-modal__close js-contact-close">
+                    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect y="19.7988" width="28" height="2" transform="rotate(-45 0 19.7988)" fill="black" />
+                        <rect width="28" height="2"
+                            transform="matrix(-0.707107 -0.707107 -0.707107 0.707107 21.2134 19.7988)" fill="black" />
+                    </svg>
+                </button>
+                <h2 class="main-title">Request an acccurate estimate</h2>
+                <p class="contact-modal__subtitle">
+                    Give new life to your sofa, mattress and carpets
+                </p>
+                <div class="contact-modal__form">
+                    <form>
+                        <div class="contact-modal__fields">
+                            <div class="contact-modal__field">
+                                <input id="contactModalName" name="contactModalName" type="text" placeholder="Name">
+                            </div>
+                            <div class="contact-modal__field">
+                                <input id="contactModalPhone" name="contactModalPhone" type="number"
+                                    placeholder="Phone number">
+                            </div>
+                            <div class="contact-modal__field">
+                                <input id="contactModalEmail" name="contactModalEmail" type="email" placeholder="Email">
+                            </div>
+                            <div class="contact-modal__field">
+                                <input id="contactModalZip" name="contactModalZip" type="number" placeholder="Zip code">
+                            </div>
+                        </div>
+                        <button type="submit" class="cta">Get a free quote</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>

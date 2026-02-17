@@ -18,7 +18,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // --- PROGRESS ---
         function updateProgress() {
-            const percent = Math.round((currentStep / (totalSteps - 1)) * 100);
+            let percent = 0;
+
+            if (currentStep === 0) {
+                const checked = steps[0].querySelector(
+                    'input[type="radio"]:checked',
+                );
+                percent = checked ? 20 : 0;
+            } else {
+                percent = (currentStep + 1) * 20;
+            }
+
+            if (percent > 100) percent = 100;
+
             progressBar.style.width = percent + '%';
             progressValue.textContent = percent + '%';
         }
@@ -48,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
             return true;
         }
 
-        // --- CHANGE ERROR STATE ---
+        // --- CHANGE HANDLER ---
         form.addEventListener('change', (e) => {
             if (e.target.matches('input[type="radio"]')) {
                 const step = e.target.closest('.quiz__step');
@@ -57,10 +69,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 checks.forEach((check) => {
                     check.classList.remove('is-error');
                 });
+
+                updateProgress();
             }
         });
 
-        // --- NEXT ---
+        // --- NEXT BUTTON CLICK ---
         nextButtons.forEach((btn) => {
             btn.addEventListener('click', () => {
                 const stepEl = steps[currentStep];
@@ -80,10 +94,18 @@ document.addEventListener('DOMContentLoaded', () => {
             const stepEl = steps[currentStep];
             if (!validateStep(stepEl)) return;
 
+            console.log('Quiz submitted');
             form.reset();
             showStep(0);
 
-            console.log('Quiz submitted');
+            // if u need show 100% for UI
+
+            // progressBar.style.width = '100%';
+            // progressValue.textContent = '100%';
+            // setTimeout(() => {
+            //     form.reset();
+            //     showStep(0);
+            // }, 1000);
         });
     };
 

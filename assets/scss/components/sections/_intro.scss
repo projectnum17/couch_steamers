@@ -5,7 +5,7 @@
 .intro {
     display: flex;
     min-height: 100vh;
-    min-height: 100svh;
+    min-height: 100dvh;
     position: relative;
     overflow: hidden;
 
@@ -18,8 +18,9 @@
         justify-content: flex-end;
 
         @include media('tablet_above') {
-            padding-block: rem(60px);
+            padding-block: rem(120px) rem(60px);
             max-width: rem(602px);
+            justify-content: center;
         }
     }
 

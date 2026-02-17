@@ -30,9 +30,15 @@
     &__card {
         display: flex;
         flex-direction: column;
+        align-items: flex-start;
         gap: rem(4px);
         border: none;
         padding: 0;
+        @include hover {
+            .results__pics {
+                transform: translateY(-5px);
+            }
+        }
 
         @include media('tablet_above') {
             padding: rem(19px);
@@ -44,9 +50,15 @@
         display: flex;
         flex-direction: column;
         gap: rem(4px);
+        overflow: hidden;
+        @include transitions(0.5s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
 
         img {
             width: 100%;
+            @include transitions(
+                0.5s,
+                cubic-bezier(0.768, 0.304, 0.496, 0.884)
+            );
         }
     }
 

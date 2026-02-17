@@ -90,6 +90,7 @@
         max-width: 100%;
         @include media('tablet_above') {
             max-width: rem(540px);
+            padding-top: var(--section_indent);
         }
     }
 

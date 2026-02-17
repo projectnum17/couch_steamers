@@ -32,6 +32,10 @@ document.addEventListener('DOMContentLoaded', () => {
             isOpen = false;
         };
 
+        modal.querySelectorAll('.js-contact-close').forEach((btn) => {
+            btn.addEventListener('click', hideModal);
+        });
+
         openTriggers.forEach((trigger) => {
             trigger.addEventListener('click', (e) => {
                 e.preventDefault();
