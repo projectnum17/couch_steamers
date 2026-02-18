@@ -13,6 +13,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const form = modal.querySelector('form');
         if (!form) return;
 
+        const phoneInput = form.querySelector('#contactModalPhone');
+        if (!phoneInput) return;
+
         const body = document.body;
         let isOpen = false;
 
@@ -32,6 +35,25 @@ document.addEventListener('DOMContentLoaded', () => {
             isOpen = false;
         };
 
+        const validatePhone = () => {
+            const value = phoneInput.value.trim();
+            const digits = value.replace(/\D/g, '');
+
+            if (!value || digits.length < 10) {
+                phoneInput.classList.add('is-error');
+                return false;
+            }
+
+            phoneInput.classList.remove('is-error');
+            return true;
+        };
+
+        phoneInput.addEventListener('input', () => {
+            if (phoneInput.classList.contains('is-error')) {
+                validatePhone();
+            }
+        });
+
         modal.querySelectorAll('.js-contact-close').forEach((btn) => {
             btn.addEventListener('click', hideModal);
         });
@@ -45,8 +67,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         form.addEventListener('submit', (e) => {
             e.preventDefault();
-            hideModal();
 
+            if (!validatePhone()) return;
+
+            hideModal();
             form.reset();
         });
 

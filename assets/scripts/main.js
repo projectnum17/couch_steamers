@@ -33,27 +33,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         animatedItems.forEach((item) => observer.observe(item));
     };
-    // const animationHandler = () => {
-    //     const animatedItems = document.querySelectorAll('.js-scroll');
-
-    //     if (!animatedItems.length) return;
-
-    //     const observer = new IntersectionObserver(
-    //         (entries, observer) => {
-    //             entries.forEach((entry) => {
-    //                 if (entry.isIntersecting) {
-    //                     entry.target.classList.add('_animated');
-    //                     observer.unobserve(entry.target);
-    //                 }
-    //             });
-    //         },
-    //         {
-    //             threshold: 0,
-    //         },
-    //     );
-
-    //     animatedItems.forEach((item) => observer.observe(item));
-    // };
 
     const headerScrolledHandler = () => {
         const header = document.querySelector('.js-header');

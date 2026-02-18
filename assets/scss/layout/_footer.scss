@@ -63,13 +63,13 @@
             display: flex;
             margin-top: 0;
             gap: rem(12px);
-            @include media('tablet_above') {
+            @include media('laptop_above') {
                 display: none;
             }
         }
         &.mobile--hidden {
             display: none;
-            @include media('tablet_above') {
+            @include media('laptop_above') {
                 display: flex;
             }
         }
@@ -225,7 +225,7 @@
     .cta {
         width: 100%;
         color: $color_text;
-        padding: rem(6px) rem(12px);
+        padding: rem(10px) rem(12px);
         border-radius: rem(8px);
         text-align: center;
         @include media('laptop_above') {

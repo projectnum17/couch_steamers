@@ -108,16 +108,11 @@
 
     &__text {
         font: 300 #{rem(14px)} / 160% $ff_base;
+        margin-bottom: rem(12px);
 
         @include media('tablet_above') {
             font-size: rem(20px);
-        }
-
-        &:not(:last-of-type) {
-            margin-bottom: rem(12px);
-            @include media('tablet_above') {
-                margin-bottom: rem(24px);
-            }
+            margin-bottom: rem(24px);
         }
     }
 
