@@ -75,21 +75,55 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
+    // const mobileSubMenuHandler = () => {
+    //     const menuItems = document.querySelectorAll(
+    //         '.mobile-menu__routes > li',
+    //     );
+
+    //     menuItems.forEach((item) => {
+    //         const submenu = item.querySelector('ul');
+
+    //         if (submenu) {
+    //             item.addEventListener('click', (e) => {
+    //                 e.preventDefault();
+
+    //                 submenu.classList.toggle('is-active');
+    //             });
+    //         }
+    //     });
+    // };
+
     const mobileSubMenuHandler = () => {
         const menuItems = document.querySelectorAll(
             '.mobile-menu__routes > li',
         );
 
         menuItems.forEach((item) => {
-            const submenu = item.querySelector('ul');
+            const trigger = item.querySelector(':scope > a');
+            const submenu = item.querySelector(':scope > ul');
 
-            if (submenu) {
-                item.addEventListener('click', (e) => {
-                    e.preventDefault();
+            if (!submenu || !trigger) return;
 
-                    submenu.classList.toggle('is-active');
-                });
-            }
+            trigger.addEventListener('click', (e) => {
+                e.preventDefault();
+
+                const isOpen = submenu.classList.contains('is-active');
+
+                if (isOpen) {
+                    submenu.style.height = submenu.scrollHeight + 'px';
+
+                    requestAnimationFrame(() => {
+                        submenu.style.height = '0px';
+                    });
+
+                    submenu.classList.remove('is-active');
+                } else {
+                    const fullHeight = submenu.scrollHeight;
+
+                    submenu.style.height = fullHeight + 'px';
+                    submenu.classList.add('is-active');
+                }
+            });
         });
     };
 
