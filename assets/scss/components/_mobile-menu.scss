@@ -41,7 +41,7 @@
                 font: inherit;
             }
 
-            &:has(.submenu) {
+            &:has(ul) {
                 > a {
                     display: inline-flex;
                     align-items: center;
@@ -60,9 +60,38 @@
                         );
                     }
                 }
+
+                ul {
+                    padding: 0;
+                    list-style-type: none;
+                    max-height: 0;
+                    overflow: hidden;
+                    display: flex;
+                    flex-direction: column;
+                    gap: rem(12px);
+                    @include transitions(
+                        0.5s,
+                        cubic-bezier(0.768, 0.304, 0.496, 0.884)
+                    );
+
+                    &.is-active {
+                        max-height: rem(250px);
+                        padding-top: rem(12px);
+                    }
+
+                    li {
+                        overflow: hidden;
+                        font-size: rem(16px);
+                        text-transform: capitalize;
+
+                        a {
+                            font: inherit;
+                        }
+                    }
+                }
             }
 
-            &:has(.submenu.is-active) {
+            &:has(ul.is-active) {
                 font-weight: 500;
                 > a {
                     &::after {
@@ -133,37 +162,6 @@
                 0.3s,
                 cubic-bezier(0.768, 0.304, 0.496, 0.884)
             );
-        }
-    }
-
-    .submenu {
-        display: grid;
-        grid-template-rows: 0fr;
-        @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
-
-        &.is-active {
-            grid-template-rows: 1fr;
-            padding-top: rem(12px);
-        }
-
-        &__box {
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            gap: rem(12px);
-            @include transitions(
-                0.3s,
-                cubic-bezier(0.768, 0.304, 0.496, 0.884)
-            );
-
-            li {
-                font-size: rem(16px);
-                text-transform: capitalize;
-
-                a {
-                    font: inherit;
-                }
-            }
         }
     }
 

@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
         );
 
         menuItems.forEach((item) => {
-            const submenu = item.querySelector('.submenu');
+            const submenu = item.querySelector('ul');
 
             if (submenu) {
                 item.addEventListener('click', (e) => {

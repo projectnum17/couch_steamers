@@ -94,75 +94,59 @@ body:has(.mobile-menu.is-active) {
             gap: rem(18px);
         }
 
-        li {
-            font: 400 #{rem(14px)} / 130% $ff_base;
-            text-transform: uppercase;
-            @include media('laptop_above') {
-                font-size: rem(16px);
-            }
+        li:has(ul) {
+            cursor: pointer;
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            gap: rem(5px);
 
-            a {
-                font: inherit;
+            &::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                height: rem(0px);
+                background: $color_accent;
                 @include transitions(
                     0.3s,
                     cubic-bezier(0.768, 0.304, 0.496, 0.884)
                 );
-                @include hover {
-                    opacity: .7;
-                }
             }
 
-            &:has(.submenu) {
-                cursor: pointer;
-                position: relative;
+            &::after {
+                content: '';
                 display: inline-flex;
-                align-items: center;
-                gap: rem(5px);
+                flex-shrink: 0;
+                width: rem(9px);
+                height: rem(5px);
+                background: url('../imgs/ico/ico-drop.svg') no-repeat center
+                    center / cover;
+                @include transitions(
+                    0.3s,
+                    cubic-bezier(0.768, 0.304, 0.496, 0.884)
+                );
+            }
 
-                &::before {
-                    content: '';
-                    position: absolute;
-                    left: 0;
-                    bottom: 0;
-                    width: 100%;
-                    height: rem(0px);
-                    background: $color_accent;
-                    @include transitions(
-                        0.3s,
-                        cubic-bezier(0.768, 0.304, 0.496, 0.884)
-                    );
-                }
-
-                &::after {
-                    content: '';
-                    display: inline-flex;
-                    flex-shrink: 0;
-                    width: rem(9px);
-                    height: rem(5px);
-                    background: url('../imgs/ico/ico-drop.svg') no-repeat center
-                        center / cover;
-                    @include transitions(
-                        0.3s,
-                        cubic-bezier(0.768, 0.304, 0.496, 0.884)
-                    );
-                }
-
-                @include hover {
-                    &::after {
-                        transform: rotate(180deg);
-                    }
-
-                    &::before {
-                        height: rem(2px);
-                    }
-
-                    .submenu {
-                        opacity: 1;
-                        visibility: visible;
-                        pointer-events: all;
-                        transform: translateY(0);
-                    }
-                }
+            ul {
+                padding: 0;
+                padding-block: rem(8px);
+                list-style: none;
+                opacity: 0;
+                visibility: hidden;
+                pointer-events: none;
+                transform: translateY(#{rem(5px)});
+                position: absolute;
+                top: 100%;
+                left: rem(-10px);
+                width: max-content;
+                background: $white_color;
+                box-shadow: 0px 0px 12px 0px #00000040;
+                @include transitions(
+                    0.3s,
+                    cubic-bezier(0.768, 0.304, 0.496, 0.884)
+                );
 
                 li {
                     display: flex;
@@ -185,6 +169,42 @@ body:has(.mobile-menu.is-active) {
                             background: rgba(191, 234, 0, 0.2);
                         }
                     }
+                }
+            }
+
+            @include hover {
+                &::after {
+                    transform: rotate(180deg);
+                }
+
+                &::before {
+                    height: rem(2px);
+                }
+
+                ul {
+                    opacity: 1;
+                    visibility: visible;
+                    pointer-events: all;
+                    transform: translateY(0);
+                }
+            }
+        }
+
+        li {
+            font: 400 #{rem(14px)} / 130% $ff_base;
+            text-transform: uppercase;
+            @include media('laptop_above') {
+                font-size: rem(16px);
+            }
+
+            a {
+                font: inherit;
+                @include transitions(
+                    0.3s,
+                    cubic-bezier(0.768, 0.304, 0.496, 0.884)
+                );
+                @include hover {
+                    opacity: 0.7;
                 }
             }
         }
@@ -272,24 +292,5 @@ body:has(.mobile-menu.is-active) {
         align-items: center;
         justify-content: space-between;
         gap: rem(20px);
-    }
-
-    .submenu {
-        opacity: 0;
-        visibility: hidden;
-        pointer-events: none;
-        transform: translateY(#{rem(5px)});
-        position: absolute;
-        top: 100%;
-        left: rem(-10px);
-        width: max-content;
-        @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
-
-        &__box {
-            width: 100%;
-            padding-block: rem(8px);
-            background: $white_color;
-            box-shadow: 0px 0px 12px 0px #00000040;
-        }
     }
 }
